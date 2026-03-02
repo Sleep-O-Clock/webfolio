@@ -1,0 +1,111 @@
+{
+  "locale": "fr",
+  "site": {
+    "name": "Vincent Lavallée",
+    "tagline": "Ingénieur full-stack qui construit des produits propres et scalables."
+  },
+  "nav": {
+    "home": "À propos",
+    "projects": "Projets",
+    "experience": "Expérience",
+    "contact": "Contact",
+    "resume": "CV"
+  },
+  "hero": {
+    "title": "Salut, moi c’est Vincent.",
+    "subtitle": "Je développe des apps web et des APIs rapides et fiables.",
+    "ctaPrimary": "Voir mes projets",
+    "ctaSecondary": "Me contacter"
+  },
+  "about": {
+    "title": "À propos",
+    "intro": "Je suis ingénieur full-stack, axé sur la qualité produit, l’architecture propre et une excellente DX.",
+    "highlightsTitle": "Ce que j’aime construire",
+    "highlights": [
+      "APIs avec NestJS / PostgreSQL",
+      "Fonctionnalités temps réel et messagerie",
+      "Modèles de données propres & migrations",
+      "Interfaces rapides avec Next.js"
+    ]
+  },
+  "projects": {
+    "title": "Projets",
+    "subtitle": "Quelques trucs que j'ai livrés ou explorés.",
+    "all": "Tous les Projets",
+    "personalProjects": "Projets Personnels",
+    "schoolProjects": "Projets Scolaires",
+    "pmc": "Projet Majeur de Conception (PMC)",
+    "viewProject": "Voir le projet",
+    "viewCode": "Voir le code",
+    "readMore": "En savoir plus",
+    "backToProjects": "Retour aux projets",
+    "overview": "Aperçu",
+    "technologiesUsed": "Technologies Utilisées:",
+    "personal": {
+      "overviewTitle": "À Propos de Mes Projets Personnels",
+      "overviewIntro": "Cette section présente les projets personnels que j'ai réalisés pendant mon temps libre pour explorer de nouvelles technologies, résoudre des problèmes concrets et améliorer continuellement mes compétences en développement.",
+      "overviewDetails": "Chaque projet représente une opportunité d'apprentissage unique et démontre ma capacité à travailler de manière autonome, de la conception au déploiement. Sélectionnez un projet dans la barre latérale pour voir les détails."
+    },
+    "school": {
+      "subtitle": "Projets académiques de l'université",
+      "overviewTitle": "À Propos de Mes Projets Scolaires",
+      "overviewIntro": "Ces projets ont été réalisés dans le cadre de mes cours universitaires, démontrant ma capacité à appliquer les connaissances théoriques à des implémentations pratiques.",
+      "overviewDetails": "Chaque projet comprend une documentation complète, des tests et suit les meilleures pratiques enseignées dans les cours respectifs. Sélectionnez un projet dans la barre latérale pour voir les détails.",
+      "keyLearnings": "Apprentissages Clés:"
+    },
+    "pmcPage": {
+      "subtitle": "Projet Majeur de Conception - Projet Capstone",
+      "overviewTitle": "À Propos du Projet Majeur de Conception",
+      "overviewIntro": "Le PMC (Projet Majeur de Conception) est un projet d'ingénierie capstone d'un an qui rassemble toutes les connaissances acquises tout au long du programme d'ingénierie.",
+      "overviewDetails": "Ce projet collaboratif implique de travailler avec une équipe multidisciplinaire pour concevoir, développer et valider une solution d'ingénierie complète. Sélectionnez une phase dans la barre latérale pour explorer le parcours.",
+      "achievements": "Réalisations Clés:",
+      "challenges": "Défis Surmontés:"
+    }
+  },
+  "experience": {
+    "title": "Expérience",
+    "subtitle": "Ce sur quoi j'ai travaillé récemment.",
+    "all": "Toutes les Expériences",
+    "workExperiences": "Expériences de Travail",
+    "implications": "Implications",
+    "overview": "Aperçu",
+    "work": {
+      "subtitle": "Expérience professionnelle et stages",
+      "overviewTitle": "À Propos de Mon Expérience de Travail",
+      "overviewIntro": "Mon parcours professionnel comprend des rôles diversifiés dans différentes industries et technologies, chacun contribuant à ma croissance en tant que développeur logiciel.",
+      "overviewDetails": "Des stages aux postes à temps plein, j'ai acquis une expérience pratique avec les pratiques de développement modernes, la collaboration en équipe et la livraison de solutions prêtes pour la production. Sélectionnez un poste dans la barre latérale pour les détails.",
+      "responsibilities": "Responsabilités Clés:",
+      "achievements": "Réalisations Clés:",
+      "technologies": "Technologies Utilisées:"
+    },
+    "implicationsPage": {
+      "subtitle": "Rôles de leadership et bénévolat",
+      "overviewTitle": "À Propos de Mes Implications",
+      "overviewIntro": "Au-delà du travail professionnel, j'ai été activement impliqué dans divers rôles de leadership et de bénévolat qui ont façonné mes compétences interpersonnelles et mon engagement communautaire.",
+      "overviewDetails": "Ces expériences m'ont enseigné de précieuses leçons en leadership, organisation, communication et l'importance de redonner à la communauté. Sélectionnez un rôle dans la barre latérale pour en savoir plus.",
+      "responsibilities": "Responsabilités Clés:",
+      "impact": "Impact et Réalisations:",
+      "skills": "Compétences Développées:"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "On build quelque chose ensemble? Envoie-moi un message.",
+    "form": {
+      "name": "Nom",
+      "email": "Courriel",
+      "message": "Message",
+      "send": "Envoyer",
+      "sending": "Envoi...",
+      "success": "Message envoyé. Je te reviens bientôt!",
+      "error": "Oups. Essaie encore."
+    }
+  },
+  "footer": {
+    "madeBy": "Fait par Vincent Lavallée"
+  },
+  "errors": {
+    "notFoundTitle": "Page introuvable",
+    "notFoundText": "La page que tu cherches n’existe pas."
+  }
+}

@@ -1,0 +1,127 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    height: calc(100vh - 80px - 60px);
+    width: 280px;
+    background: color-mix(in srgb, var(--sidebar-bg) 95%, transparent);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid color-mix(in srgb, var(--sidebar-text) 10%, transparent);
+    padding: 24px;
+    transition: transform 0.3s ease;
+    z-index: 100;
+    overflow-y: auto;
+}
+
+.sidebar.collapsed {
+    transform: translateX(-100%);
+}
+
+.toggleButton {
+    position: fixed;
+    left: 280px;
+    top: 100px;
+    width: 40px;
+    height: 40px;
+    border-radius: 0 8px 8px 0;
+    border: 1px solid color-mix(in srgb, var(--sidebar-text) 10%, transparent);
+    border-left: none;
+    background: color-mix(in srgb, var(--sidebar-bg) 95%, transparent);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 101;
+    font-size: 1.2rem;
+    color: color-mix(in srgb, var(--sidebar-text) 70%, transparent);
+}
+
+.toggleButton.collapsed {
+    left: 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.toggleButton:hover {
+    background: var(--sidebar-hover);
+}
+
+.backLink {
+    color: color-mix(in srgb, var(--sidebar-text) 60%, transparent);
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    display: block;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+    margin-bottom: 12px;
+}
+
+.backLink:hover {
+    color: color-mix(in srgb, var(--sidebar-text) 90%, transparent);
+    background: var(--sidebar-hover);
+}
+
+.title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.link {
+    color: color-mix(in srgb, var(--sidebar-text) 70%, transparent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    display: block;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.link:hover {
+    color: color-mix(in srgb, var(--sidebar-text) 90%, transparent);
+    background: var(--sidebar-hover);
+    font-weight: 700;
+}
+
+.link.active {
+    color: color-mix(in srgb, var(--sidebar-text) 90%, transparent);
+    background: var(--sidebar-active);
+    font-weight: 700;
+}
+
+.sublinks {
+    margin-left: 12px;
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sublink {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    opacity: 0.9;
+}

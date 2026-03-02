@@ -1,0 +1,66 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 48px;
+    background: color-mix(in srgb, var(--footer-bg) 80%, transparent);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid color-mix(in srgb, var(--footer-text) 10%, transparent);
+    margin-top: auto;
+    font-family: 'Courier New', Courier, Monaco, monospace;
+    font-size: 0.85rem;
+    color: var(--footer-text);
+}
+
+.left {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.right {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.link {
+    color: var(--footer-link);
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.link:hover {
+    color: var(--footer-link-hover);
+    background: color-mix(in srgb, var(--footer-text) 5%, transparent);
+    font-weight: 700;
+}
+
+.link svg {
+    color: var(--icon-color);
+    transition: color 0.2s ease;
+}
+
+.link:hover svg {
+    color: var(--icon-hover);
+}
+
+.github svg {
+    color: var(--github-icon-color);
+    font-size: 1rem;
+}
+
+.github:hover svg {
+    color: var(--github-icon-hover);
+}
+
+.linkedin svg {
+    color: var(--linkedin-icon-color);
+    font-size: 1rem;
+}
+
+.linkedin:hover svg {
+    color: var(--linkedin-icon-hover);
+}

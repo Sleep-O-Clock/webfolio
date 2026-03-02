@@ -1,0 +1,111 @@
+{
+  "locale": "en",
+  "site": {
+    "name": "Vincent Lavallée",
+    "tagline": "Full-stack engineer building clean, scalable products."
+  },
+  "nav": {
+    "home": "About Me",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact",
+    "resume": "Resume"
+  },
+  "hero": {
+    "title": "Hi, I'm Vincent.",
+    "subtitle": "I build fast, reliable web apps and APIs.",
+    "ctaPrimary": "See my projects",
+    "ctaSecondary": "Contact me"
+  },
+  "about": {
+    "title": "About",
+    "intro": "I’m a full-stack engineer focused on product quality, clean architecture, and great DX.",
+    "highlightsTitle": "What I like to build",
+    "highlights": [
+      "APIs with NestJS / PostgreSQL",
+      "Real-time features and messaging",
+      "Clean data models & migrations",
+      "Fast UIs with Next.js"
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A few things I've shipped or experimented with.",
+    "all": "All Projects",
+    "personalProjects": "Personal Projects",
+    "schoolProjects": "School Projects",
+    "pmc": "Major Design Project (PMC)",
+    "viewProject": "View project",
+    "viewCode": "View code",
+    "readMore": "Read more",
+    "backToProjects": "Back to projects",
+    "overview": "Overview",
+    "technologiesUsed": "Technologies Used:",
+    "personal": {
+      "overviewTitle": "About My Personal Projects",
+      "overviewIntro": "This section showcases personal projects I've built in my free time to explore new technologies, solve real-world problems, and continuously improve my development skills.",
+      "overviewDetails": "Each project represents a unique learning opportunity and demonstrates my ability to work independently from concept to deployment. Select a project from the sidebar to view detailed information."
+    },
+    "school": {
+      "subtitle": "Academic projects from university courses",
+      "overviewTitle": "About My School Projects",
+      "overviewIntro": "These projects were completed as part of my university coursework, demonstrating my ability to apply theoretical knowledge to practical implementations.",
+      "overviewDetails": "Each project includes comprehensive documentation, testing, and follows best practices taught in the respective courses. Select a project from the sidebar to view details.",
+      "keyLearnings": "Key Learnings:"
+    },
+    "pmcPage": {
+      "subtitle": "Major Design Project - Final Year Capstone",
+      "overviewTitle": "About the Major Design Project",
+      "overviewIntro": "The PMC (Projet Majeur de Conception) is a year-long capstone engineering project that brings together all the knowledge acquired throughout the engineering program.",
+      "overviewDetails": "This collaborative project involved working with a multidisciplinary team to design, develop, and validate a complete engineering solution. Select a phase from the sidebar to explore the journey.",
+      "achievements": "Key Achievements:",
+      "challenges": "Challenges Overcome:"
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "Stuff I've worked on recently.",
+    "all": "All Experiences",
+    "workExperiences": "Work Experiences",
+    "implications": "Implications",
+    "overview": "Overview",
+    "work": {
+      "subtitle": "Professional work experience and internships",
+      "overviewTitle": "About My Work Experience",
+      "overviewIntro": "My professional journey has included diverse roles across different industries and technologies, each contributing to my growth as a software developer.",
+      "overviewDetails": "From internships to full-time positions, I've gained hands-on experience with modern development practices, team collaboration, and delivering production-ready solutions. Select a position from the sidebar for details.",
+      "responsibilities": "Key Responsibilities:",
+      "achievements": "Key Achievements:",
+      "technologies": "Technologies Used:"
+    },
+    "implicationsPage": {
+      "subtitle": "Leadership roles and volunteer involvement",
+      "overviewTitle": "About My Involvements",
+      "overviewIntro": "Beyond professional work, I've been actively involved in various leadership and volunteer roles that have shaped my soft skills and community engagement.",
+      "overviewDetails": "These experiences have taught me valuable lessons in leadership, organization, communication, and the importance of giving back to the community. Select a role from the sidebar to learn more.",
+      "responsibilities": "Key Responsibilities:",
+      "impact": "Impact & Achievements:",
+      "skills": "Skills Developed:"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Want to build something together? Send me a message.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send",
+      "sending": "Sending...",
+      "success": "Message sent. I’ll get back to you soon!",
+      "error": "Something went wrong. Please try again."
+    }
+  },
+  "footer": {
+    "madeBy": "Made by Vincent Lavallée"
+  },
+  "errors": {
+    "notFoundTitle": "Page not found",
+    "notFoundText": "The page you’re looking for doesn’t exist."
+  }
+}

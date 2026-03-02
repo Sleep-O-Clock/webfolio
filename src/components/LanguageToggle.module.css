@@ -1,0 +1,35 @@
+.toggleButton {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid var(--button-border);
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: color-mix(in srgb, var(--button-text) 70%, var(--button-bg));
+    transition: all 0.2s ease;
+}
+
+.toggleButton:hover {
+    background: var(--button-hover-bg);
+    color: var(--button-hover-text);
+}
+
+.toggleButton:active {
+    transform: scale(0.95);
+}
+
+.label {
+    text-transform: uppercase;
+    color: var(--icon-color);
+    transition: color 0.2s ease;
+}
+
+.toggleButton:hover .label {
+    color: var(--icon-hover);
+}

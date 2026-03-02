@@ -1,0 +1,147 @@
+:root {
+    --background: #ffffff;
+    --foreground: #111111;
+
+    /* Navbar colors */
+    --navbar-bg: #ffffff;
+    --navbar-text: #111111;
+    --navbar-hover: #f0f0f0;
+
+    /* Sidebar colors */
+    --sidebar-bg: #ffffff;
+    --sidebar-text: #111111;
+    --sidebar-hover: #f0f0f0;
+    --sidebar-active: #e0e0e0;
+
+    /* Footer colors */
+    --footer-bg: #ffffff;
+    --footer-text: #666666;
+    --footer-link: #111111;
+    --footer-link-hover: #000000;
+
+    /* Text/Characters colors */
+    --text-primary: #111111;
+    --text-secondary: #666666;
+    --text-tertiary: #999999;
+
+    /* Logo colors */
+    --logo-primary: #111111;
+    --logo-secondary: #666666;
+
+    /* Button colors */
+    --button-bg: #111111;
+    --button-text: #ffffff;
+    --button-hover-bg: #333333;
+    --button-hover-text: #ffffff;
+    --button-border: #111111;
+
+    /* Icon colors (Font Awesome) */
+    --icon-color: #111111;
+    --icon-hover: #ffffff;
+
+    /* Specific icon colors */
+    --theme-icon-color: #111111;
+    --theme-icon-hover: #ffffff;
+    --github-icon-color: #111111;
+    --github-icon-hover: #000000;
+    --linkedin-icon-color: #111111;
+    --linkedin-icon-hover: #000000;
+
+    /* Link colors (content links) */
+    --link-color: #111111;
+    --link-hover-color: #000000;
+    --link-border: rgba(0, 0, 0, 0.2);
+    --link-hover-border: rgba(0, 0, 0, 0.4);
+    --link-hover-bg: rgba(0, 0, 0, 0.05);
+    
+    /* Subpage content colors */
+    --content-title: #111111;
+    --content-subtitle: rgba(0, 0, 0, 0.7);
+    --content-text: #111111;
+    --content-meta: rgba(0, 0, 0, 0.7);
+    --content-location: rgba(0, 0, 0, 0.6);
+    --card-bg: rgba(0, 0, 0, 0.03);
+    --card-border: rgba(0, 0, 0, 0.1);
+    --timeline-border: rgba(0, 0, 0, 0.3);
+    --tag-bg: rgba(0, 0, 0, 0.08);
+    --tag-text: #111111;
+    --list-item-text: rgba(0, 0, 0, 0.8);
+}
+
+.dark {
+    --background: #0a0a0a;
+    --foreground: #ffffff;
+
+    /* Navbar colors */
+    --navbar-bg: #0a0a0a;
+    --navbar-text: #ffffff;
+    --navbar-hover: #1a1a1a;
+
+    /* Sidebar colors */
+    --sidebar-bg: #0a0a0a;
+    --sidebar-text: #ffffff;
+    --sidebar-hover: #1a1a1a;
+    --sidebar-active: #2a2a2a;
+
+    /* Footer colors */
+    --footer-bg: #111111;
+    --footer-text: #cccccc;
+    --footer-link: #ffffff;
+    --footer-link-hover: #cccccc;
+
+    /* Text/Characters colors */
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-tertiary: #999999;
+
+    /* Logo colors */
+    --logo-primary: #ffffff;
+    --logo-secondary: #cccccc;
+
+    /* Button colors */
+    --button-bg: #ffffff;
+    --button-text: #0a0a0a;
+    --button-hover-bg: #cccccc;
+    --button-hover-text: #0a0a0a;
+    --button-border: #ffffff;
+
+    /* Icon colors (Font Awesome) */
+    --icon-color: #ffffff;
+    --icon-hover: #000000;
+
+    /* Specific icon colors */
+    --theme-icon-color: #ffffff;
+    --theme-icon-hover: #cccccc;
+    --github-icon-color: #ffffff;
+    --github-icon-hover: #cccccc;
+    --linkedin-icon-color: #66b3ff;
+    --linkedin-icon-hover: #99ccff;
+
+    /* Link colors (content links) */
+    --link-color: #ffffff;
+    --link-hover-color: #cccccc;
+    --link-border: rgba(255, 255, 255, 0.2);
+    --link-hover-border: rgba(255, 255, 255, 0.4);
+    --link-hover-bg: rgba(255, 255, 255, 0.05);
+    
+    /* Subpage content colors */
+    --content-title: #ffffff;
+    --content-subtitle: rgba(255, 255, 255, 0.7);
+    --content-text: #ffffff;
+    --content-meta: rgba(255, 255, 255, 0.7);
+    --content-location: rgba(255, 255, 255, 0.6);
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --timeline-border: rgba(255, 255, 255, 0.3);
+    --tag-bg: rgba(255, 255, 255, 0.1);
+    --tag-text: #ffffff;
+    --list-item-text: rgba(255, 255, 255, 0.8);
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+    transition: background 0.3s ease, color 0.3s ease;
+    font-family: 'Courier New', Courier, Monaco, monospace;
+    letter-spacing: -0.02em;
+}
