@@ -1,10 +1,12 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { getMessages } from "@/src/i18n"
 import Sidebar from "@/src/components/Sidebar"
 import { useSidebarMargin } from "@/src/hooks/useSidebarMargin"
+import ProjectOverviewSection from "./ProjectOverviewSection"
+import ProjectDetailSection from "./ProjectDetailSection"
 import styles from "@/src/styles/SubPage.module.css"
 
 export default function PersonalProjectsPage() {
@@ -13,7 +15,23 @@ export default function PersonalProjectsPage() {
     const t = getMessages(locale)
     const sidebarMargin = useSidebarMargin()
     const router = useRouter()
-    const [activeSection, setActiveSection] = useState("overview")
+    const [activeSection, setActiveSection] = useState("overview");
+
+    // Initialize from hash and listen for hash changes
+    useEffect(() => {
+        const updateFromHash = () => {
+            const hash = window.location.hash.slice(1);
+            if (hash && ["overview", "personal-1", "personal-2", "personal-3"].includes(hash)) {
+                setActiveSection(hash);
+            }
+        };
+
+        // Set initial hash on mount
+        updateFromHash();
+
+        window.addEventListener('hashchange', updateFromHash);
+        return () => window.removeEventListener('hashchange', updateFromHash);
+    }, []);
 
     const sidebarLinks = [
         { id: "overview", label: t.projects.overview },
@@ -24,6 +42,7 @@ export default function PersonalProjectsPage() {
 
     const handleSectionChange = (sectionId: string) => {
         setActiveSection(sectionId)
+        window.location.hash = sectionId
     }
 
     const projectData: Record<string, { title: string; description: string; details: string; technologies: string[] }> = {
@@ -68,47 +87,22 @@ export default function PersonalProjectsPage() {
                 </p>
 
                 {activeSection === "overview" && (
-                    <section>
-                        <div className={styles.cardWithMargin}>
-                            <h2 className={styles.overviewTitle}>{t.projects.personal.overviewTitle}</h2>
-                            <p className={styles.bodyTextShort}>
-                                {t.projects.personal.overviewIntro}
-                            </p>
-                            <p className={styles.bodyTextShort}>
-                                {t.projects.personal.overviewDetails}
-                            </p>
-                        </div>
-                    </section>
+                    <ProjectOverviewSection
+                        title={t.projects.personal.overviewTitle}
+                        intro={t.projects.personal.overviewIntro}
+                        details={t.projects.personal.overviewDetails}
+                    />
                 )}
 
                 {currentProject && activeSection !== "overview" && (
-                    <section>
-                        <div className={styles.card}>
-                            <h2 className={styles.sectionTitle}>{currentProject.title}</h2>
-                            <p className={styles.sectionDescription}>
-                                {currentProject.description}
-                            </p>
-                            <p className={styles.bodyText}>
-                                {currentProject.details}
-                            </p>
-
-                            <div className={styles.section}>
-                                <h3 className={styles.subsectionTitle}>{t.projects.technologiesUsed}</h3>
-                                <div className={styles.tagContainer}>
-                                    {currentProject.technologies.map((tech, index) => (
-                                        <span key={index} className={styles.tag}>
-                                            {tech}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className={styles.linkContainer}>
-                                <a href="#" className={styles.link}>{t.projects.viewProject} →</a>
-                                <a href="#" className={styles.link}>{t.projects.viewCode} →</a>
-                            </div>
-                        </div>
-                    </section>
+                    <ProjectDetailSection
+                        project={currentProject}
+                        labels={{
+                            technologiesUsed: t.projects.technologiesUsed,
+                            viewProject: t.projects.viewProject,
+                            viewCode: t.projects.viewCode
+                        }}
+                    />
                 )}
             </main>
         </>

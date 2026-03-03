@@ -15,12 +15,14 @@ export default async function LocaleLayout({
 
     return (
         <SidebarProvider>
-            <Navbar locale={locale} />
-            <Sidebar />
-            <main style={{ flex: 1 }}>
-                {children}
-            </main>
-            <Footer locale={locale} />
+            <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+                <Navbar locale={locale} />
+                <Sidebar />
+                <main style={{ flex: 1 }}>
+                    {children}
+                </main>
+                <Footer locale={locale} />
+            </div>
         </SidebarProvider>
     );
 }

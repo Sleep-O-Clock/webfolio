@@ -26,7 +26,59 @@
       "Fonctionnalités temps réel et messagerie",
       "Modèles de données propres & migrations",
       "Interfaces rapides avec Next.js"
-    ]
+    ],
+    "sidebarLabels": {
+      "background": "Parcours",
+      "skills": "Compétences",
+      "education": "Formation",
+      "interests": "Intérêts"
+    },
+    "background": {
+      "title": "Mon Parcours",
+      "content": "Passionné par le développement logiciel depuis plusieurs années, j'ai acquis une solide expérience dans la construction d'applications web modernes et évolutives. Mon parcours m'a permis de travailler sur des projets variés, allant du développement full-stack à l'architecture de systèmes complexes."
+    },
+    "skills": {
+      "title": "Compétences Techniques",
+      "categories": {
+        "languagesFrameworks": "Langages & Frameworks",
+        "databases": "Base de Données",
+        "toolsDevOps": "Outils & DevOps"
+      }
+    },
+    "education": {
+      "title": "Formation Académique",
+      "items": [
+        {
+          "degree": "Baccalauréat en Génie Logiciel",
+          "school": "Université de Montréal",
+          "period": "2020 - 2024",
+          "details": "Spécialisation en développement web et architecture logicielle. Projet de fin d'études axé sur les applications distribuées."
+        },
+        {
+          "degree": "DEC en Informatique",
+          "school": "Cégep de Québec",
+          "period": "2018 - 2020",
+          "details": "Fondations en programmation, structures de données et algorithmique."
+        }
+      ]
+    },
+    "interests": {
+      "title": "Intérêts & Passions",
+      "items": [
+        {
+          "title": "Technologies Émergentes",
+          "description": "Toujours curieux d'explorer les nouvelles technologies et frameworks. Particulièrement intéressé par l'IA, le machine learning et les architectures cloud-native."
+        },
+        {
+          "title": "Open Source",
+          "description": "Contributeur actif à plusieurs projets open source. Crois fermement au partage des connaissances et à l'apprentissage collaboratif."
+        },
+        {
+          "title": "Mentorat",
+          "description": "Passionné par l'enseignement et le mentorat. Aide régulièrement les débutants à démarrer leur carrière en développement."
+        }
+      ]
+    }
   },
   "projects": {
     "title": "Projets",
@@ -41,6 +93,18 @@
     "backToProjects": "Retour aux projets",
     "overview": "Aperçu",
     "technologiesUsed": "Technologies Utilisées:",
+    "exploreText": "Parcourez différentes catégories de projets à l'aide de la barre latérale. Chaque catégorie contient des informations détaillées sur des projets spécifiques.",
+    "cards": {
+      "personal": {
+        "description": "Projets personnels créés pour résoudre des problèmes concrets et explorer de nouvelles technologies."
+      },
+      "school": {
+        "description": "Projets académiques démontrant les compétences acquises dans divers cours d'informatique."
+      },
+      "pmc": {
+        "description": "Projet Majeur de Conception - Projet capstone d'ingénierie complet."
+      }
+    },
     "personal": {
       "overviewTitle": "À Propos de Mes Projets Personnels",
       "overviewIntro": "Cette section présente les projets personnels que j'ai réalisés pendant mon temps libre pour explorer de nouvelles technologies, résoudre des problèmes concrets et améliorer continuellement mes compétences en développement.",
@@ -69,6 +133,15 @@
     "workExperiences": "Expériences de Travail",
     "implications": "Implications",
     "overview": "Aperçu",
+    "exploreText": "Explorez mon expérience professionnelle et mon engagement bénévole à l'aide de la barre latérale. Chaque section contient des informations détaillées sur des rôles et des contributions spécifiques.",
+    "cards": {
+      "work": {
+        "description": "Expérience professionnelle incluant stages, postes à temps partiel et rôles de recherche."
+      },
+      "implications": {
+        "description": "Rôles de leadership dans les organisations étudiantes et bénévolat dans la communauté."
+      }
+    },
     "work": {
       "subtitle": "Expérience professionnelle et stages",
       "overviewTitle": "À Propos de Mon Expérience de Travail",
@@ -91,6 +164,12 @@
   "contact": {
     "title": "Contact",
     "subtitle": "On build quelque chose ensemble? Envoie-moi un message.",
+    "sidebarLabels": {
+      "form": "Formulaire",
+      "info": "Coordonnées",
+      "social": "Réseaux Sociaux",
+      "availability": "Disponibilité"
+    },
     "form": {
       "name": "Nom",
       "email": "Courriel",
@@ -99,6 +178,29 @@
       "sending": "Envoi...",
       "success": "Message envoyé. Je te reviens bientôt!",
       "error": "Oups. Essaie encore."
+    },
+    "info": {
+      "title": "Coordonnées",
+      "email": "Email",
+      "phone": "Téléphone",
+      "location": "Localisation",
+      "timezone": "Fuseau Horaire"
+    },
+    "social": {
+      "title": "Réseaux Sociaux",
+      "portfolio": "Site Personnel"
+    },
+    "availability": {
+      "title": "Disponibilité",
+      "status": "Ouvert aux opportunités",
+      "details": "Je suis actuellement disponible pour de nouveaux projets et collaborations. N'hésitez pas à me contacter pour discuter de vos besoins.",
+      "collaborationTypes": "Types de collaboration",
+      "preferences": [
+        "Contrats à temps plein",
+        "Projets freelance",
+        "Consultation technique",
+        "Travail à distance"
+      ]
     }
   },
   "footer": {

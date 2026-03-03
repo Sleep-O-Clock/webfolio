@@ -1,10 +1,14 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { getMessages } from "@/src/i18n";
 import { useSidebarMargin } from "@/src/hooks/useSidebarMargin";
 import { useParams } from "next/navigation";
 import Sidebar from "@/src/components/Sidebar";
+import BackgroundSection from "./BackgroundSection";
+import SkillsSection from "./SkillsSection";
+import EducationSection from "./EducationSection";
+import InterestsSection from "./InterestsSection";
 import styles from "@/src/styles/SubPage.module.css";
 
 export default function AboutPage() {
@@ -14,80 +18,63 @@ export default function AboutPage() {
     const sidebarMargin = useSidebarMargin();
     const [activeSection, setActiveSection] = useState("background");
 
+    // Initialize from hash and listen for hash changes
+    useEffect(() => {
+        const updateFromHash = () => {
+            const hash = window.location.hash.slice(1);
+            if (hash && ["background", "skills", "education", "interests"].includes(hash)) {
+                setActiveSection(hash);
+            }
+        };
+
+        // Set initial hash on mount
+        updateFromHash();
+
+        window.addEventListener('hashchange', updateFromHash);
+        return () => window.removeEventListener('hashchange', updateFromHash);
+    }, []);
+
+    const handleSectionChange = (sectionId: string) => {
+        setActiveSection(sectionId);
+        window.location.hash = sectionId;
+    };
+
     const sidebarLinks = [
-        { id: "background", label: locale === "fr" ? "Parcours" : "Background" },
-        { id: "skills", label: locale === "fr" ? "Compétences" : "Skills" },
-        { id: "education", label: locale === "fr" ? "Formation" : "Education" },
-        { id: "interests", label: locale === "fr" ? "Intérêts" : "Interests" },
+        { id: "background", label: t.about.sidebarLabels.background },
+        { id: "skills", label: t.about.sidebarLabels.skills },
+        { id: "education", label: t.about.sidebarLabels.education },
+        { id: "interests", label: t.about.sidebarLabels.interests },
     ]
 
     const aboutData: { [key: string]: any } = {
         "background": {
-            title: locale === "fr" ? "Mon Parcours" : "My Background",
-            content: locale === "fr"
-                ? "Passionné par le développement logiciel depuis plusieurs années, j'ai acquis une solide expérience dans la construction d'applications web modernes et évolutives. Mon parcours m'a permis de travailler sur des projets variés, allant du développement full-stack à l'architecture de systèmes complexes."
-                : "Passionate about software development for several years, I've gained solid experience building modern, scalable web applications. My journey has allowed me to work on various projects, from full-stack development to complex system architecture.",
+            title: t.about.background.title,
+            content: t.about.background.content,
         },
         "skills": {
-            title: locale === "fr" ? "Compétences Techniques" : "Technical Skills",
+            title: t.about.skills.title,
             categories: [
                 {
-                    name: locale === "fr" ? "Langages & Frameworks" : "Languages & Frameworks",
+                    name: t.about.skills.categories.languagesFrameworks,
                     items: ["JavaScript/TypeScript", "React", "Next.js", "Node.js", "Python", "Java"]
                 },
                 {
-                    name: locale === "fr" ? "Base de Données" : "Databases",
+                    name: t.about.skills.categories.databases,
                     items: ["PostgreSQL", "MongoDB", "Redis", "MySQL"]
                 },
                 {
-                    name: locale === "fr" ? "Outils & DevOps" : "Tools & DevOps",
+                    name: t.about.skills.categories.toolsDevOps,
                     items: ["Git", "Docker", "AWS", "CI/CD", "Linux"]
                 }
             ]
         },
         "education": {
-            title: locale === "fr" ? "Formation Académique" : "Academic Education",
-            items: [
-                {
-                    degree: locale === "fr" ? "Baccalauréat en Génie Logiciel" : "Bachelor of Software Engineering",
-                    school: locale === "fr" ? "Université de Montréal" : "University of Montreal",
-                    period: "2020 - 2024",
-                    details: locale === "fr"
-                        ? "Spécialisation en développement web et architecture logicielle. Projet de fin d'études axé sur les applications distribuées."
-                        : "Specialization in web development and software architecture. Final project focused on distributed applications."
-                },
-                {
-                    degree: locale === "fr" ? "DEC en Informatique" : "College Diploma in Computer Science",
-                    school: locale === "fr" ? "Cégep de Québec" : "Quebec College",
-                    period: "2018 - 2020",
-                    details: locale === "fr"
-                        ? "Fondations en programmation, structures de données et algorithmique."
-                        : "Foundations in programming, data structures, and algorithms."
-                }
-            ]
+            title: t.about.education.title,
+            items: t.about.education.items
         },
         "interests": {
-            title: locale === "fr" ? "Intérêts & Passions" : "Interests & Passions",
-            items: [
-                {
-                    title: locale === "fr" ? "Technologies Émergentes" : "Emerging Technologies",
-                    description: locale === "fr"
-                        ? "Toujours curieux d'explorer les nouvelles technologies et frameworks. Particulièrement intéressé par l'IA, le machine learning et les architectures cloud-native."
-                        : "Always curious to explore new technologies and frameworks. Particularly interested in AI, machine learning, and cloud-native architectures."
-                },
-                {
-                    title: locale === "fr" ? "Open Source" : "Open Source",
-                    description: locale === "fr"
-                        ? "Contributeur actif à plusieurs projets open source. Crois fermement au partage des connaissances et à l'apprentissage collaboratif."
-                        : "Active contributor to several open source projects. Strongly believe in knowledge sharing and collaborative learning."
-                },
-                {
-                    title: locale === "fr" ? "Mentorat" : "Mentoring",
-                    description: locale === "fr"
-                        ? "Passionné par l'enseignement et le mentorat. Aide régulièrement les débutants à démarrer leur carrière en développement."
-                        : "Passionate about teaching and mentoring. Regularly help beginners start their development careers."
-                }
-            ]
+            title: t.about.interests.title,
+            items: t.about.interests.items
         }
     }
 
@@ -99,7 +86,7 @@ export default function AboutPage() {
                 title={t.about.title}
                 links={sidebarLinks}
                 activeSection={activeSection}
-                onSectionChange={setActiveSection}
+                onSectionChange={handleSectionChange}
             />
             <main className={styles.container} style={sidebarMargin}>
                 <h1 className={styles.pageTitle}>{t.about.title}</h1>
@@ -108,64 +95,31 @@ export default function AboutPage() {
                 </p>
 
                 {activeSection === "background" && currentSection && (
-                    <section>
-                        <div className={styles.card}>
-                            <h2 className={styles.sectionTitle}>{currentSection.title}</h2>
-                            <p className={styles.bodyText}>
-                                {currentSection.content}
-                            </p>
-                        </div>
-                    </section>
+                    <BackgroundSection
+                        title={currentSection.title}
+                        content={currentSection.content}
+                    />
                 )}
 
                 {activeSection === "skills" && currentSection && (
-                    <section>
-                        <div className={styles.card}>
-                            <h2 className={styles.sectionTitle}>{currentSection.title}</h2>
-                            {currentSection.categories.map((category: any, index: number) => (
-                                <div key={index} className={styles.section}>
-                                    <h3 className={styles.subsectionTitle}>{category.name}</h3>
-                                    <div className={styles.tagContainer}>
-                                        {category.items.map((item: string, idx: number) => (
-                                            <span key={idx} className={styles.tag}>
-                                                {item}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </section>
+                    <SkillsSection
+                        title={currentSection.title}
+                        categories={currentSection.categories}
+                    />
                 )}
 
                 {activeSection === "education" && currentSection && (
-                    <section>
-                        <div className={styles.card}>
-                            <h2 className={styles.sectionTitle}>{currentSection.title}</h2>
-                            {currentSection.items.map((item: any, index: number) => (
-                                <div key={index} className={index > 0 ? styles.sectionTop : ""}>
-                                    <h3 className={styles.subsectionTitle}>{item.degree}</h3>
-                                    <p className={styles.organizationText}>{item.school}</p>
-                                    <p className={styles.metaText}>{item.period}</p>
-                                    <p className={styles.bodyTextShort}>{item.details}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </section>
+                    <EducationSection
+                        title={currentSection.title}
+                        items={currentSection.items}
+                    />
                 )}
 
                 {activeSection === "interests" && currentSection && (
-                    <section>
-                        <div className={styles.card}>
-                            <h2 className={styles.sectionTitle}>{currentSection.title}</h2>
-                            {currentSection.items.map((item: any, index: number) => (
-                                <div key={index} className={styles.section}>
-                                    <h3 className={styles.subsectionTitle}>{item.title}</h3>
-                                    <p className={styles.bodyTextShort}>{item.description}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </section>
+                    <InterestsSection
+                        title={currentSection.title}
+                        items={currentSection.items}
+                    />
                 )}
             </main>
         </>

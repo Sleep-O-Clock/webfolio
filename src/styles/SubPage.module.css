@@ -1,14 +1,14 @@
 /* Main container */
 .container {
     padding: 48px;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: min(900px, 80vw);
+    width: 100%;
 }
 
 .containerNarrow {
     padding: 48px;
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: min(700px, 70vw);
+    width: 100%;
 }
 
 /* Headings */

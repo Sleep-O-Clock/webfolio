@@ -1,10 +1,12 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { getMessages } from "@/src/i18n"
 import Sidebar from "@/src/components/Sidebar"
 import { useSidebarMargin } from "@/src/hooks/useSidebarMargin"
+import ImplicationOverviewSection from "./ImplicationOverviewSection"
+import ImplicationDetailSection from "./ImplicationDetailSection"
 import styles from "@/src/styles/SubPage.module.css"
 
 export default function ImplicationsPage() {
@@ -13,7 +15,23 @@ export default function ImplicationsPage() {
     const t = getMessages(locale)
     const sidebarMargin = useSidebarMargin()
     const router = useRouter()
-    const [activeSection, setActiveSection] = useState("overview")
+    const [activeSection, setActiveSection] = useState("overview");
+
+    // Initialize from hash and listen for hash changes
+    useEffect(() => {
+        const updateFromHash = () => {
+            const hash = window.location.hash.slice(1);
+            if (hash && ["overview", "impl-1", "impl-2", "impl-3"].includes(hash)) {
+                setActiveSection(hash);
+            }
+        };
+
+        // Set initial hash on mount
+        updateFromHash();
+
+        window.addEventListener('hashchange', updateFromHash);
+        return () => window.removeEventListener('hashchange', updateFromHash);
+    }, []);
 
     const sidebarLinks = [
         { id: "overview", label: t.experience.overview },
@@ -24,6 +42,7 @@ export default function ImplicationsPage() {
 
     const handleSectionChange = (sectionId: string) => {
         setActiveSection(sectionId)
+        window.location.hash = sectionId
     }
 
     const implicationData: Record<string, {
@@ -124,67 +143,22 @@ export default function ImplicationsPage() {
                 </p>
 
                 {activeSection === "overview" && (
-                    <section>
-                        <div className={styles.cardWithMargin}>
-                            <h2 className={styles.overviewTitle}>{t.experience.implicationsPage.overviewTitle}</h2>
-                            <p className={styles.bodyTextShort}>
-                                {t.experience.implicationsPage.overviewIntro}
-                            </p>
-                            <p className={styles.bodyTextShort}>
-                                {t.experience.implicationsPage.overviewDetails}
-                            </p>
-                        </div>
-                    </section>
+                    <ImplicationOverviewSection
+                        title={t.experience.implicationsPage.overviewTitle}
+                        intro={t.experience.implicationsPage.overviewIntro}
+                        details={t.experience.implicationsPage.overviewDetails}
+                    />
                 )}
 
                 {currentImplication && activeSection !== "overview" && (
-                    <section>
-                        <div className={styles.timelineCard}>
-                            <div className={styles.headerRow}>
-                                <h2 className={styles.titleLarge}>{currentImplication.title}</h2>
-                                <span className={styles.periodText}>{currentImplication.period}</span>
-                            </div>
-                            <p className={styles.organizationText}>
-                                {currentImplication.organization}
-                            </p>
-                            <p className={styles.locationText}>
-                                {currentImplication.type}
-                            </p>
-
-                            <div className={styles.sectionTop}>
-                                <h3 className={styles.subsectionTitle}>{t.experience.implicationsPage.responsibilities}</h3>
-                                <ul className={styles.list}>
-                                    {currentImplication.responsibilities.map((item, index) => (
-                                        <li key={index} className={`${styles.listItem} ${styles.bulletListItem}`}>
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            <div className={styles.section}>
-                                <h3 className={styles.subsectionTitle}>{t.experience.implicationsPage.impact}</h3>
-                                <ul className={styles.list}>
-                                    {currentImplication.impact.map((item, index) => (
-                                        <li key={index} className={`${styles.listItem} ${styles.checkListItem}`}>
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h3 className={styles.subsectionTitle}>{t.experience.implicationsPage.skills}</h3>
-                                <div className={styles.tagContainer}>
-                                    {currentImplication.skills.map((skill, index) => (
-                                        <span key={index} className={styles.tag}>
-                                            {skill}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    <ImplicationDetailSection
+                        implication={currentImplication}
+                        labels={{
+                            responsibilities: t.experience.implicationsPage.responsibilities,
+                            impact: t.experience.implicationsPage.impact,
+                            skills: t.experience.implicationsPage.skills
+                        }}
+                    />
                 )}
             </main>
         </>

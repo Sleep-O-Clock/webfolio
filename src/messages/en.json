@@ -26,7 +26,59 @@
       "Real-time features and messaging",
       "Clean data models & migrations",
       "Fast UIs with Next.js"
-    ]
+    ],
+    "sidebarLabels": {
+      "background": "Background",
+      "skills": "Skills",
+      "education": "Education",
+      "interests": "Interests"
+    },
+    "background": {
+      "title": "My Background",
+      "content": "Passionate about software development for several years, I've gained solid experience building modern, scalable web applications. My journey has allowed me to work on various projects, from full-stack development to complex system architecture."
+    },
+    "skills": {
+      "title": "Technical Skills",
+      "categories": {
+        "languagesFrameworks": "Languages & Frameworks",
+        "databases": "Databases",
+        "toolsDevOps": "Tools & DevOps"
+      }
+    },
+    "education": {
+      "title": "Academic Education",
+      "items": [
+        {
+          "degree": "Bachelor of Software Engineering",
+          "school": "University of Montreal",
+          "period": "2020 - 2024",
+          "details": "Specialization in web development and software architecture. Final project focused on distributed applications."
+        },
+        {
+          "degree": "College Diploma in Computer Science",
+          "school": "Quebec College",
+          "period": "2018 - 2020",
+          "details": "Foundations in programming, data structures, and algorithms."
+        }
+      ]
+    },
+    "interests": {
+      "title": "Interests & Passions",
+      "items": [
+        {
+          "title": "Emerging Technologies",
+          "description": "Always curious to explore new technologies and frameworks. Particularly interested in AI, machine learning, and cloud-native architectures."
+        },
+        {
+          "title": "Open Source",
+          "description": "Active contributor to several open source projects. Strongly believe in knowledge sharing and collaborative learning."
+        },
+        {
+          "title": "Mentoring",
+          "description": "Passionate about teaching and mentoring. Regularly help beginners start their development careers."
+        }
+      ]
+    }
   },
   "projects": {
     "title": "Projects",
@@ -41,6 +93,18 @@
     "backToProjects": "Back to projects",
     "overview": "Overview",
     "technologiesUsed": "Technologies Used:",
+    "exploreText": "Browse through different categories of projects using the sidebar. Each category contains detailed information about specific projects.",
+    "cards": {
+      "personal": {
+        "description": "Personal projects built to solve real-world problems and explore new technologies."
+      },
+      "school": {
+        "description": "Academic projects demonstrating skills learned in various computer science courses."
+      },
+      "pmc": {
+        "description": "Major Design Project - Comprehensive capstone engineering project."
+      }
+    },
     "personal": {
       "overviewTitle": "About My Personal Projects",
       "overviewIntro": "This section showcases personal projects I've built in my free time to explore new technologies, solve real-world problems, and continuously improve my development skills.",
@@ -69,6 +133,15 @@
     "workExperiences": "Work Experiences",
     "implications": "Implications",
     "overview": "Overview",
+    "exploreText": "Explore my professional work experience and volunteer involvement using the sidebar. Each section contains detailed information about specific roles and contributions.",
+    "cards": {
+      "work": {
+        "description": "Professional work experience including internships, part-time positions, and research roles."
+      },
+      "implications": {
+        "description": "Leadership roles in student organizations and volunteer work in the community."
+      }
+    },
     "work": {
       "subtitle": "Professional work experience and internships",
       "overviewTitle": "About My Work Experience",
@@ -91,14 +164,43 @@
   "contact": {
     "title": "Contact",
     "subtitle": "Want to build something together? Send me a message.",
+    "sidebarLabels": {
+      "form": "Contact Form",
+      "info": "Contact Info",
+      "social": "Social Media",
+      "availability": "Availability"
+    },
     "form": {
       "name": "Name",
       "email": "Email",
       "message": "Message",
       "send": "Send",
       "sending": "Sending...",
-      "success": "Message sent. I’ll get back to you soon!",
+      "success": "Message sent. I'll get back to you soon!",
       "error": "Something went wrong. Please try again."
+    },
+    "info": {
+      "title": "Contact Information",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "timezone": "Timezone"
+    },
+    "social": {
+      "title": "Social Media",
+      "portfolio": "Personal Website"
+    },
+    "availability": {
+      "title": "Availability",
+      "status": "Open to opportunities",
+      "details": "I am currently available for new projects and collaborations. Feel free to reach out to discuss your needs.",
+      "collaborationTypes": "Collaboration Types",
+      "preferences": [
+        "Full-time contracts",
+        "Freelance projects",
+        "Technical consulting",
+        "Remote work"
+      ]
     }
   },
   "footer": {

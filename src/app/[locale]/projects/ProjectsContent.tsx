@@ -34,8 +34,8 @@ export default function ProjectsContent({ locale }: ProjectsContentProps) {
             />
             <main style={{
                 padding: "48px",
-                maxWidth: "1200px",
-                margin: "0 auto",
+                maxWidth: "min(1200px, 90vw)",
+                width: "100%",
                 ...sidebarMargin
             }}>
                 <h1 style={{ fontSize: "2.5rem", marginBottom: "16px" }}>{t.projects.title}</h1>
@@ -45,7 +45,7 @@ export default function ProjectsContent({ locale }: ProjectsContentProps) {
 
                 <section>
                     <p style={{ fontSize: "1.1rem", marginBottom: "32px", lineHeight: 1.6 }}>
-                        Browse through different categories of projects using the sidebar. Each category contains detailed information about specific projects.
+                        {t.projects.exploreText}
                     </p>
 
                     <div style={{ display: "grid", gap: "24px", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}>
@@ -60,7 +60,7 @@ export default function ProjectsContent({ locale }: ProjectsContentProps) {
                         }}>
                             <h2 style={{ fontSize: "1.5rem", marginBottom: "12px" }}>{t.projects.personalProjects}</h2>
                             <p style={{ opacity: 0.7, lineHeight: 1.6 }}>
-                                Personal projects built to solve real-world problems and explore new technologies.
+                                {t.projects.cards.personal.description}
                             </p>
                         </Link>
 
@@ -75,7 +75,7 @@ export default function ProjectsContent({ locale }: ProjectsContentProps) {
                         }}>
                             <h2 style={{ fontSize: "1.5rem", marginBottom: "12px" }}>{t.projects.schoolProjects}</h2>
                             <p style={{ opacity: 0.7, lineHeight: 1.6 }}>
-                                Academic projects demonstrating skills learned in various computer science courses.
+                                {t.projects.cards.school.description}
                             </p>
                         </Link>
 
@@ -90,7 +90,7 @@ export default function ProjectsContent({ locale }: ProjectsContentProps) {
                         }}>
                             <h2 style={{ fontSize: "1.5rem", marginBottom: "12px" }}>{t.projects.pmc}</h2>
                             <p style={{ opacity: 0.7, lineHeight: 1.6 }}>
-                                Major Design Project - Comprehensive capstone engineering project.
+                                {t.projects.cards.pmc.description}
                             </p>
                         </Link>
                     </div>

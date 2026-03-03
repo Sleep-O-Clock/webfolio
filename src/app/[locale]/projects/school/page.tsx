@@ -1,10 +1,12 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { getMessages } from "@/src/i18n"
 import Sidebar from "@/src/components/Sidebar"
 import { useSidebarMargin } from "@/src/hooks/useSidebarMargin"
+import SchoolProjectOverviewSection from "./SchoolProjectOverviewSection"
+import SchoolProjectDetailSection from "./SchoolProjectDetailSection"
 import styles from "@/src/styles/SubPage.module.css"
 
 export default function SchoolProjectsPage() {
@@ -13,7 +15,23 @@ export default function SchoolProjectsPage() {
     const t = getMessages(locale)
     const sidebarMargin = useSidebarMargin()
     const router = useRouter()
-    const [activeSection, setActiveSection] = useState("overview")
+    const [activeSection, setActiveSection] = useState("overview");
+
+    // Initialize from hash and listen for hash changes
+    useEffect(() => {
+        const updateFromHash = () => {
+            const hash = window.location.hash.slice(1);
+            if (hash && ["overview", "school-1", "school-2", "school-3"].includes(hash)) {
+                setActiveSection(hash);
+            }
+        };
+
+        // Set initial hash on mount
+        updateFromHash();
+
+        window.addEventListener('hashchange', updateFromHash);
+        return () => window.removeEventListener('hashchange', updateFromHash);
+    }, []);
 
     const sidebarLinks = [
         { id: "overview", label: t.projects.overview },
@@ -24,6 +42,7 @@ export default function SchoolProjectsPage() {
 
     const handleSectionChange = (sectionId: string) => {
         setActiveSection(sectionId)
+        window.location.hash = sectionId
     }
 
     const projectData: Record<string, {
@@ -96,61 +115,23 @@ export default function SchoolProjectsPage() {
                 </p>
 
                 {activeSection === "overview" && (
-                    <section>
-                        <div className={styles.cardWithMargin}>
-                            <h2 className={styles.overviewTitle}>{t.projects.school.overviewTitle}</h2>
-                            <p className={styles.bodyTextShort}>
-                                {t.projects.school.overviewIntro}
-                            </p>
-                            <p className={styles.bodyTextShort}>
-                                {t.projects.school.overviewDetails}
-                            </p>
-                        </div>
-                    </section>
+                    <SchoolProjectOverviewSection
+                        title={t.projects.school.overviewTitle}
+                        intro={t.projects.school.overviewIntro}
+                        details={t.projects.school.overviewDetails}
+                    />
                 )}
 
                 {currentProject && activeSection !== "overview" && (
-                    <section>
-                        <div className={styles.card}>
-                            <div className={styles.metaText}>
-                                {currentProject.course}
-                            </div>
-                            <h2 className={styles.sectionTitle}>{currentProject.title}</h2>
-                            <p className={styles.sectionDescription}>
-                                {currentProject.description}
-                            </p>
-                            <p className={styles.bodyText}>
-                                {currentProject.details}
-                            </p>
-
-                            <div className={styles.section}>
-                                <h3 className={styles.subsectionTitle}>{t.projects.technologiesUsed}</h3>
-                                <div className={styles.tagContainer}>
-                                    {currentProject.technologies.map((tech, index) => (
-                                        <span key={index} className={styles.tag}>
-                                            {tech}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className={styles.section}>
-                                <h3 className={styles.subsectionTitle}>{t.projects.school.keyLearnings}</h3>
-                                <ul className={styles.list}>
-                                    {currentProject.learnings.map((learning, index) => (
-                                        <li key={index} className={`${styles.listItem} ${styles.arrowListItem}`}>
-                                            {learning}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            <div className={styles.linkContainer}>
-                                <a href="#" className={styles.link}>{t.projects.viewProject} →</a>
-                                <a href="#" className={styles.link}>{t.projects.viewCode} →</a>
-                            </div>
-                        </div>
-                    </section>
+                    <SchoolProjectDetailSection
+                        project={currentProject}
+                        labels={{
+                            technologiesUsed: t.projects.technologiesUsed,
+                            keyLearnings: t.projects.school.keyLearnings,
+                            viewProject: t.projects.viewProject,
+                            viewCode: t.projects.viewCode
+                        }}
+                    />
                 )}
             </main>
         </>

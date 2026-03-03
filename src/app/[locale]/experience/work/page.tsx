@@ -1,10 +1,12 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { getMessages } from "@/src/i18n"
 import Sidebar from "@/src/components/Sidebar"
 import { useSidebarMargin } from "@/src/hooks/useSidebarMargin"
+import WorkOverviewSection from "./WorkOverviewSection"
+import WorkExperienceDetailSection from "./WorkExperienceDetailSection"
 import styles from "@/src/styles/SubPage.module.css"
 
 export default function WorkExperiencePage() {
@@ -13,7 +15,23 @@ export default function WorkExperiencePage() {
     const t = getMessages(locale)
     const sidebarMargin = useSidebarMargin()
     const router = useRouter()
-    const [activeSection, setActiveSection] = useState("overview")
+    const [activeSection, setActiveSection] = useState("overview");
+
+    // Initialize from hash and listen for hash changes
+    useEffect(() => {
+        const updateFromHash = () => {
+            const hash = window.location.hash.slice(1);
+            if (hash && ["overview", "work-1", "work-2", "work-3"].includes(hash)) {
+                setActiveSection(hash);
+            }
+        };
+
+        // Set initial hash on mount
+        updateFromHash();
+
+        window.addEventListener('hashchange', updateFromHash);
+        return () => window.removeEventListener('hashchange', updateFromHash);
+    }, []);
 
     const sidebarLinks = [
         { id: "overview", label: t.experience.overview },
@@ -24,6 +42,7 @@ export default function WorkExperiencePage() {
 
     const handleSectionChange = (sectionId: string) => {
         setActiveSection(sectionId)
+        window.location.hash = sectionId
     }
 
     const experienceData: Record<string, {
@@ -122,67 +141,22 @@ export default function WorkExperiencePage() {
                 </p>
 
                 {activeSection === "overview" && (
-                    <section>
-                        <div className={styles.cardWithMargin}>
-                            <h2 className={styles.overviewTitle}>{t.experience.work.overviewTitle}</h2>
-                            <p className={styles.bodyTextShort}>
-                                {t.experience.work.overviewIntro}
-                            </p>
-                            <p className={styles.bodyTextShort}>
-                                {t.experience.work.overviewDetails}
-                            </p>
-                        </div>
-                    </section>
+                    <WorkOverviewSection
+                        title={t.experience.work.overviewTitle}
+                        intro={t.experience.work.overviewIntro}
+                        details={t.experience.work.overviewDetails}
+                    />
                 )}
 
                 {currentExperience && activeSection !== "overview" && (
-                    <section>
-                        <div className={styles.timelineCard}>
-                            <div className={styles.headerRow}>
-                                <h2 className={styles.titleLarge}>{currentExperience.title}</h2>
-                                <span className={styles.periodText}>{currentExperience.period}</span>
-                            </div>
-                            <p className={styles.organizationText}>
-                                {currentExperience.organization}
-                            </p>
-                            <p className={styles.locationText}>
-                                {currentExperience.location} • {currentExperience.type}
-                            </p>
-
-                            <div className={styles.sectionTop}>
-                                <h3 className={styles.subsectionTitle}>{t.experience.work.responsibilities}</h3>
-                                <ul className={styles.list}>
-                                    {currentExperience.responsibilities.map((item, index) => (
-                                        <li key={index} className={`${styles.listItem} ${styles.bulletListItem}`}>
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            <div className={styles.section}>
-                                <h3 className={styles.subsectionTitle}>{t.experience.work.achievements}</h3>
-                                <ul className={styles.list}>
-                                    {currentExperience.achievements.map((item, index) => (
-                                        <li key={index} className={`${styles.listItem} ${styles.checkListItem}`}>
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h3 className={styles.subsectionTitle}>{t.experience.work.technologies}</h3>
-                                <div className={styles.tagContainer}>
-                                    {currentExperience.technologies.map((tech, index) => (
-                                        <span key={index} className={styles.tag}>
-                                            {tech}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                    <WorkExperienceDetailSection
+                        experience={currentExperience}
+                        labels={{
+                            responsibilities: t.experience.work.responsibilities,
+                            achievements: t.experience.work.achievements,
+                            technologies: t.experience.work.technologies
+                        }}
+                    />
                 )}
             </main>
         </>

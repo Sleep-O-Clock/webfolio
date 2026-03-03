@@ -1,10 +1,12 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { getMessages } from "@/src/i18n"
 import Sidebar from "@/src/components/Sidebar"
 import { useSidebarMargin } from "@/src/hooks/useSidebarMargin"
+import PMCOverviewSection from "./PMCOverviewSection"
+import PMCPhaseDetailSection from "./PMCPhaseDetailSection"
 import styles from "@/src/styles/SubPage.module.css"
 
 export default function PMCPage() {
@@ -13,7 +15,23 @@ export default function PMCPage() {
     const t = getMessages(locale)
     const sidebarMargin = useSidebarMargin()
     const router = useRouter()
-    const [activeSection, setActiveSection] = useState("overview")
+    const [activeSection, setActiveSection] = useState("overview");
+
+    // Initialize from hash and listen for hash changes
+    useEffect(() => {
+        const updateFromHash = () => {
+            const hash = window.location.hash.slice(1);
+            if (hash && ["overview", "pmc-overview", "pmc-research", "pmc-implementation", "pmc-testing"].includes(hash)) {
+                setActiveSection(hash);
+            }
+        };
+
+        // Set initial hash on mount
+        updateFromHash();
+
+        window.addEventListener('hashchange', updateFromHash);
+        return () => window.removeEventListener('hashchange', updateFromHash);
+    }, []);
 
     const sidebarLinks = [
         { id: "overview", label: t.projects.overview },
@@ -25,6 +43,7 @@ export default function PMCPage() {
 
     const handleSectionChange = (sectionId: string) => {
         setActiveSection(sectionId)
+        window.location.hash = sectionId
     }
 
     const pmcData: Record<string, {
@@ -124,65 +143,23 @@ export default function PMCPage() {
                 </p>
 
                 {activeSection === "overview" && (
-                    <section>
-                        <div className={styles.cardWithMargin}>
-                            <h2 className={styles.overviewTitle}>{t.projects.pmcPage.overviewTitle}</h2>
-                            <p className={styles.bodyTextShort}>
-                                {t.projects.pmcPage.overviewIntro}
-                            </p>
-                            <p className={styles.bodyTextShort}>
-                                {t.projects.pmcPage.overviewDetails}
-                            </p>
-                        </div>
-                    </section>
+                    <PMCOverviewSection
+                        title={t.projects.pmcPage.overviewTitle}
+                        intro={t.projects.pmcPage.overviewIntro}
+                        details={t.projects.pmcPage.overviewDetails}
+                    />
                 )}
 
                 {currentPhase && activeSection !== "overview" && (
-                    <section>
-                        <div className={styles.card}>
-                            <div className={styles.metaText}>
-                                {currentPhase.phase}
-                            </div>
-                            <h2 className={styles.sectionTitle}>{currentPhase.title}</h2>
-                            <p className={styles.sectionDescription}>
-                                {currentPhase.description}
-                            </p>
-                            <p className={styles.bodyText}>
-                                {currentPhase.details}
-                            </p>
-
-                            {currentPhase.achievements && (
-                                <div className={styles.section}>
-                                    <h3 className={styles.subsectionTitle}>{t.projects.pmcPage.achievements}</h3>
-                                    <ul className={styles.list}>
-                                        {currentPhase.achievements.map((achievement, index) => (
-                                            <li key={index} className={`${styles.listItem} ${styles.checkListItem}`}>
-                                                {achievement}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
-
-                            {currentPhase.challenges && (
-                                <div className={styles.section}>
-                                    <h3 className={styles.subsectionTitle}>{t.projects.pmcPage.challenges}</h3>
-                                    <ul className={styles.list}>
-                                        {currentPhase.challenges.map((challenge, index) => (
-                                            <li key={index} className={`${styles.listItem} ${styles.arrowListItem}`}>
-                                                {challenge}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
-
-                            <div className={styles.linkContainer}>
-                                <a href="#" className={styles.link}>{t.projects.viewProject} →</a>
-                                <a href="#" className={styles.link}>{t.projects.viewCode} →</a>
-                            </div>
-                        </div>
-                    </section>
+                    <PMCPhaseDetailSection
+                        phase={currentPhase}
+                        labels={{
+                            achievements: t.projects.pmcPage.achievements,
+                            challenges: t.projects.pmcPage.challenges,
+                            viewProject: t.projects.viewProject,
+                            viewCode: t.projects.viewCode
+                        }}
+                    />
                 )}
             </main>
         </>

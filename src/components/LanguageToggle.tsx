@@ -15,7 +15,9 @@ export default function LanguageToggle({ currentLocale }: { currentLocale: strin
         segments[1] = newLocale
         const newPath = segments.join("/")
 
-        router.push(newPath)
+        // Preserve the hash when switching languages
+        const hash = window.location.hash
+        router.push(newPath + hash)
     }
 
     return (

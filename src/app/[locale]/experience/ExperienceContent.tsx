@@ -33,8 +33,8 @@ export default function ExperienceContent({ locale }: ExperienceContentProps) {
             />
             <main style={{
                 padding: "48px",
-                maxWidth: "900px",
-                margin: "0 auto",
+                maxWidth: "min(900px, 80vw)",
+                width: "100%",
                 ...sidebarMargin
             }}>
                 <h1 style={{ fontSize: "2.5rem", marginBottom: "16px" }}>{t.experience.title}</h1>
@@ -44,7 +44,7 @@ export default function ExperienceContent({ locale }: ExperienceContentProps) {
 
                 <section>
                     <p style={{ fontSize: "1.1rem", marginBottom: "32px", lineHeight: 1.6 }}>
-                        Explore my professional work experience and volunteer involvement using the sidebar. Each section contains detailed information about specific roles and contributions.
+                        {t.experience.exploreText}
                     </p>
 
                     <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
@@ -59,7 +59,7 @@ export default function ExperienceContent({ locale }: ExperienceContentProps) {
                         }}>
                             <h2 style={{ fontSize: "1.5rem", marginBottom: "12px" }}>{t.experience.workExperiences}</h2>
                             <p style={{ opacity: 0.7, lineHeight: 1.6 }}>
-                                Professional work experience including internships, part-time positions, and research roles.
+                                {t.experience.cards.work.description}
                             </p>
                         </Link>
 
@@ -74,7 +74,7 @@ export default function ExperienceContent({ locale }: ExperienceContentProps) {
                         }}>
                             <h2 style={{ fontSize: "1.5rem", marginBottom: "12px" }}>{t.experience.implications}</h2>
                             <p style={{ opacity: 0.7, lineHeight: 1.6 }}>
-                                Leadership roles in student organizations and volunteer work in the community.
+                                {t.experience.cards.implications.description}
                             </p>
                         </Link>
                     </div>

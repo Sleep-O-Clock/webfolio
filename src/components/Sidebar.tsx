@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useSidebar } from "@/src/contexts/SidebarContext"
 import styles from "./Sidebar.module.css"
 
@@ -26,6 +26,13 @@ interface SidebarProps {
 export default function Sidebar({ title, links = [], onSectionChange, activeSection, backLink }: SidebarProps) {
     const { isCollapsed, setIsCollapsed } = useSidebar()
     const [currentSection, setCurrentSection] = useState(activeSection || "")
+
+    // Update internal state when activeSection prop changes
+    useEffect(() => {
+        if (activeSection) {
+            setCurrentSection(activeSection)
+        }
+    }, [activeSection])
 
     const handleLinkClick = (id: string) => {
         setCurrentSection(id)
