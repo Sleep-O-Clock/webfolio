@@ -24,7 +24,7 @@ interface SidebarProps {
 }
 
 export default function Sidebar({ title, links = [], onSectionChange, activeSection, backLink }: SidebarProps) {
-    const { isCollapsed, setIsCollapsed } = useSidebar()
+    const { isCollapsed, setIsCollapsed, isInitializing } = useSidebar()
     const [currentSection, setCurrentSection] = useState(activeSection || "")
 
     // Update internal state when activeSection prop changes
@@ -47,11 +47,15 @@ export default function Sidebar({ title, links = [], onSectionChange, activeSect
                 className={`${styles.toggleButton} ${isCollapsed ? styles.collapsed : ""}`}
                 onClick={() => setIsCollapsed(!isCollapsed)}
                 aria-label={isCollapsed ? "Open sidebar" : "Close sidebar"}
+                style={{ transition: isInitializing ? "none" : undefined }}
             >
                 {isCollapsed ? "▶" : "◀"}
             </button>
 
-            <aside className={`${styles.sidebar} ${isCollapsed ? styles.collapsed : ""}`}>
+            <aside
+                className={`${styles.sidebar} ${isCollapsed ? styles.collapsed : ""}`}
+                style={{ transition: isInitializing ? "none" : undefined }}
+            >
                 {backLink && (
                     <button
                         className={styles.backLink}

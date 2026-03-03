@@ -3,7 +3,7 @@
 import { useSidebar } from "@/src/contexts/SidebarContext"
 
 export function useSidebarMargin() {
-    const { isCollapsed } = useSidebar()
+    const { isCollapsed, isInitializing } = useSidebar()
     const sidebarWidth = 330
 
     // When sidebar is closed: center at 50vw (middle of window)
@@ -13,6 +13,6 @@ export function useSidebarMargin() {
         position: "relative" as const,
         left: isCollapsed ? "50vw" : `calc(${sidebarWidth}px + (100vw - ${sidebarWidth}px) / 2)`,
         transform: "translateX(-50%)",
-        transition: "left 0.3s ease"
+        transition: isInitializing ? "none" : "left 0.3s ease"
     }
 }
