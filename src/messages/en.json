@@ -136,6 +136,29 @@
     "exploreText": "Explore my professional work experience and volunteer involvement using the sidebar. Each section contains detailed information about specific roles and contributions.",
     "cards": {
       "work": {
+        "djobInternship":{
+          "title": "Full Stack Developer",
+          "type": "Internship",
+          "organization": "Djob",
+          "location": "Online (Quebec, Canada)",
+          "period": "Winter 2025",
+          "description": "Web development internship",
+          "responsibilities": [
+            "Développement de nouvelles fonctionnalités pour la plateforme de recrutement en ligne de Djob.",
+            "Collaboration avec les équipes de produit et de design pour créer des interfaces utilisateur intuitives.",
+            "Optimisation des performances et amélioration de la scalabilité de l'application."
+          ],
+          "achievements": [
+            "Livraison de plusieurs fonctionnalités clés qui ont amélioré l'expérience utilisateur et augmenté l'engagement sur la plateforme.",
+            "Contribution à la refactorisation du code backend, réduisant les temps de réponse de l'API de 30%."
+          ],
+          "technologies": {
+            "languages": ["TypeScript", "JavaScript", "HTML/CSS", "Dart", "SQL"],
+            "frameworks": [ "React","Fastify", "Vendure"],
+            "databases": ["PostgreSQL"],
+            "tools": ["Git", "Heroku", "Railway", "PGAdmin"]
+          }
+        },
         "description": "Professional work experience including internships, part-time positions, and research roles."
       },
       "implications": {

@@ -136,6 +136,55 @@
     "exploreText": "Explorez mon expérience professionnelle et mon engagement bénévole à l'aide de la barre latérale. Chaque section contient des informations détaillées sur des rôles et des contributions spécifiques.",
     "cards": {
       "work": {
+        "djobInternship":{
+          "title": "Développeur Full Stack",
+          "type": "Stage",
+          "organization": "Djob",
+          "location": "En ligne (Québec, Canada)",
+          "period": "Hiver 2026",
+          "description": "Stage de développement web",
+          "responsibilities": [
+            "Développement de nouvelles fonctionnalités pour la plateforme de recrutement en ligne de Djob.",
+            "Collaboration avec les équipes de produit et de design pour créer des interfaces utilisateur intuitives.",
+            "Optimisation des performances et amélioration de la scalabilité de l'application."
+          ],
+          "achievements": [
+            "Livraison de plusieurs fonctionnalités clés qui ont amélioré l'expérience utilisateur et augmenté l'engagement sur la plateforme.",
+            "Contribution à la refactorisation du code backend, réduisant les temps de réponse de l'API de 30%."
+          ],
+          "technologies": {
+            "languages": ["TypeScript", "JavaScript", "HTML/CSS", "Dart", "SQL"],
+            "frameworks": [ "React","Fastify", "Vendure"],
+            "databases": ["PostgreSQL"],
+            "tools": ["Git", "Heroku", "Railway", "PGAdmin"]
+          }
+        },
+        "gcBrieauInternship":{
+          "title": "Développeur IA",
+          "type": "Stage",
+          "organization": "GCBrieau",
+          "location": "Sherbrooke, Québec, Canada",
+          "period": "Été 2025",
+          "description": "Lors de ce stage, j’ai contribué au développement d’agents conversationnels basés sur des modèles de langage (LLM). J’ai intégré et exploité plusieurs API afin d’automatiser des processus et d’optimiser les flux de travail. J’ai également travaillé avec le Model Context Protocol (MCP) pour connecter divers outils et améliorer l’efficacité des projets. Enfin, j’ai participé au suivi de projets avec des clients, ce qui m’a permis d’acquérir une expérience concrète en gestion et communication technique.",
+          "responsibilities": [
+            "Développement d'agents basés sur les LLM pour l'automatisation de processus.",
+            "Approfondissement des connaissances appliquées en intelligence artificielle.",
+            "Gestion du suivi de projets et interface directe avec les clients.",
+            "Intégration et manipulation d'API multiples pour l'interopérabilité des systèmes.",
+            "Exploitation d'outils via le protocole MCP (Model Context Protocol) pour connecter les modèles à des données externes."
+
+          ],
+          "achievements": [
+            "Livraison de plusieurs fonctionnalités clés qui ont amélioré l'expérience utilisateur et augmenté l'engagement sur la plateforme.",
+            "Contribution à la refactorisation du code backend, réduisant les temps de réponse de l'API de 30%."
+          ],
+          "technologies": {
+            "languages": ["TypeScript", "JavaScript", "HTML/CSS", "Dart", "SQL"],
+            "frameworks": [ "React","Fastify", "Vendure"],
+            "databases": ["PostgreSQL"],
+            "tools": ["Git", "Heroku", "Railway", "PGAdmin"]
+          }
+        },
         "description": "Expérience professionnelle incluant stages, postes à temps partiel et rôles de recherche."
       },
       "implications": {

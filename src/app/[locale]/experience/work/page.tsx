@@ -35,9 +35,9 @@ export default function WorkExperiencePage() {
 
     const sidebarLinks = [
         { id: "overview", label: t.experience.overview },
-        { id: "work-1", label: "Software Developer Intern" },
-        { id: "work-2", label: "Junior Developer" },
-        { id: "work-3", label: "Research Assistant" },
+        { id: "work-1", label: t.experience.cards.work.djobInternship.title },
+        { id: "work-2", label: "" },
+        { id: "work-3", label: "" },
     ]
 
     const handleSectionChange = (sectionId: string) => {

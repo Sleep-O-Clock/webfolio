@@ -101,6 +101,7 @@ export default function AboutPage() {
                     />
                 )}
 
+
                 {activeSection === "skills" && currentSection && (
                     <SkillsSection
                         title={currentSection.title}
