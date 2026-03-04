@@ -34,8 +34,7 @@ export default function ExperienceContent({ locale }: ExperienceContentProps) {
             <main style={{
                 padding: "48px",
                 maxWidth: "min(900px, 80vw)",
-                width: "100%",
-                ...sidebarMargin
+                width: "100%"
             }}>
                 <h1 style={{ fontSize: "2.5rem", marginBottom: "16px" }}>{t.experience.title}</h1>
                 <p style={{ fontSize: "1.1rem", marginBottom: "48px", opacity: 0.7 }}>

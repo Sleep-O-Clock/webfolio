@@ -43,7 +43,7 @@ export default function WorkExperienceDetailSection({ experience, labels }: Work
                             <div className={styles.tagContainer} style={{ marginTop: '12px', justifyContent: 'flex-end' }}>
                                 {experience.technologies.map((tech, index) => (
                                     <span key={index} className={styles.tag}>
-                                        {index < 5 ? tech : `+${experience.technologies.length - 5} more`}
+                                        {index < 5}
 
                                         {tech}
                                     </span>
