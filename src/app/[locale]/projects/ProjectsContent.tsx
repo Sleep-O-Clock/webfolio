@@ -34,7 +34,6 @@ export default function ProjectsContent({ locale }: ProjectsContentProps) {
             />
             <main style={{
                 padding: "48px",
-                maxWidth: "min(1200px, 90vw)",
                 width: "100%",
                 ...sidebarMargin
             }}>
