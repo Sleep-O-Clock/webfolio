@@ -1,6 +1,6 @@
 import Navbar from "@/src/components/layout/Navbar";
 import Footer from "@/src/components/layout/Footer";
-import Sidebar from "@/src/components/Sidebar";
+import Sidebar from "@/src/components/layout/Sidebar";
 import { SidebarProvider } from "@/src/contexts/SidebarContext";
 import "@/src/lib/fontawesome";
 

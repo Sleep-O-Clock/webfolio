@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { getMessages } from "@/src/i18n";
 import { useSidebarMargin } from "@/src/hooks/useSidebarMargin";
 import { useParams } from "next/navigation";
-import Sidebar from "@/src/components/Sidebar";
+import Sidebar from "@/src/components/layout/Sidebar";
 import ContactFormSection from "./ContactFormSection";
 import ContactInfoSection from "./ContactInfoSection";
 import SocialLinksSection from "./SocialLinksSection";
@@ -113,7 +113,7 @@ export default function ContactPage() {
                 activeSection={activeSection}
                 onSectionChange={handleSectionChange}
             />
-            <main className={styles.containerNarrow} style={sidebarMargin}>
+            <main className={styles.container} style={sidebarMargin}>
                 <h1 className={styles.pageTitle}>{t.contact.title}</h1>
                 <p className={styles.pageSubtitle}>
                     {t.contact.subtitle}

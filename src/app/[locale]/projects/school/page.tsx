@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { getMessages } from "@/src/i18n"
-import Sidebar from "@/src/components/Sidebar"
+import Sidebar from "@/src/components/layout/Sidebar"
 import { useSidebarMargin } from "@/src/hooks/useSidebarMargin"
 import SchoolProjectOverviewSection from "./SchoolProjectOverviewSection"
 import SchoolProjectDetailSection from "./SchoolProjectDetailSection"

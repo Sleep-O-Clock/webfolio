@@ -1,5 +1,3 @@
-"use client";
-import Link from "next/link";
 import styles from "./Footer.module.css";
 import { getMessages } from "@/src/i18n";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

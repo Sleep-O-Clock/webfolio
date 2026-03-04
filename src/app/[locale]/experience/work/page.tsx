@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { getMessages } from "@/src/i18n"
-import Sidebar from "@/src/components/Sidebar"
+import Sidebar from "@/src/components/layout/Sidebar"
 import { useSidebarMargin } from "@/src/hooks/useSidebarMargin"
 import WorkOverviewSection from "./WorkOverviewSection"
 import WorkExperienceDetailSection from "./WorkExperienceDetailSection"
@@ -134,7 +134,7 @@ export default function WorkExperiencePage() {
                     onClick: () => router.push(`/${locale}/experience`)
                 }}
             />
-            <main className={styles.containerNarrow} style={sidebarMargin}>
+            <main className={styles.container} style={sidebarMargin}>
                 <h1 className={styles.pageTitle}>{t.experience.workExperiences}</h1>
                 <p className={styles.pageSubtitle}>
                     {t.experience.work.subtitle}

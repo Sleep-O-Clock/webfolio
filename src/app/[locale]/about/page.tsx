@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { getMessages } from "@/src/i18n";
 import { useSidebarMargin } from "@/src/hooks/useSidebarMargin";
 import { useParams } from "next/navigation";
-import Sidebar from "@/src/components/Sidebar";
+import Sidebar from "@/src/components/layout/Sidebar";
 import BackgroundSection from "./BackgroundSection";
 import SkillsSection from "./SkillsSection";
 import EducationSection from "./EducationSection";

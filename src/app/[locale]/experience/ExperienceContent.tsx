@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { getMessages } from "@/src/i18n"
-import Sidebar from "@/src/components/Sidebar"
+import Sidebar from "@/src/components/layout/Sidebar"
 import { useSidebarMargin } from "@/src/hooks/useSidebarMargin"
 import { useRouter } from "next/navigation"
 
