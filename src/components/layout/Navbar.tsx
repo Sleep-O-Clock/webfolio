@@ -15,7 +15,6 @@ export default function Navbar({ locale }: { locale: string }) {
                 <Link href={`/${locale}/about`} className={styles.link}>
                     {nav.home}
                 </Link>
-
                 {/* Projects Dropdown */}
                 <div className={styles.dropdown}>
                     <Link href={`/${locale}/projects`} className={styles.dropdownTrigger}>
@@ -58,6 +57,7 @@ export default function Navbar({ locale }: { locale: string }) {
                 <LanguageToggle currentLocale={locale} />
                 <ThemeToggle />
             </div>
+
         </nav>
     );
 }

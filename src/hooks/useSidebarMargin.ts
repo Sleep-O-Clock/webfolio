@@ -14,6 +14,6 @@ export function useSidebarMargin() {
         left: isCollapsed ? "50vw" : `calc(${sidebarWidth}px + (100vw - ${sidebarWidth}px) / 2)`,
         transform: "translateX(-50%)",
         maxWidth: isCollapsed ? "min(1200px, 80vw)" : `min(1200px, calc(80vw - ${sidebarWidth}px))`,
-        transition: isInitializing ? "none" : "all 0.3s ease"
+        transition: isInitializing ? "none" : "left 0.3s ease, transform 0.3s ease"
     }
 }

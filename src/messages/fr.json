@@ -11,12 +11,6 @@
     "contact": "Contact",
     "resume": "CV"
   },
-  "hero": {
-    "title": "Salut, moi c’est Vincent.",
-    "subtitle": "Je développe des apps web et des APIs rapides et fiables.",
-    "ctaPrimary": "Voir mes projets",
-    "ctaSecondary": "Me contacter"
-  },
   "about": {
     "title": "À propos",
     "intro": "Je suis ingénieur full-stack, axé sur la qualité produit, l’architecture propre et une excellente DX.",
@@ -47,20 +41,26 @@
     },
     "education": {
       "title": "Formation Académique",
-      "items": [
-        {
-          "degree": "Baccalauréat en Génie Logiciel",
-          "school": "Université de Montréal",
-          "period": "2020 - 2024",
-          "details": "Spécialisation en développement web et architecture logicielle. Projet de fin d'études axé sur les applications distribuées."
-        },
-        {
-          "degree": "DEC en Informatique",
-          "school": "Cégep de Québec",
-          "period": "2018 - 2020",
-          "details": "Fondations en programmation, structures de données et algorithmique."
+      "university": {
+        "degree": "Baccalauréat en Génie Informatique",
+        "school": "Université de Sherbrooke",
+        "period": "2023 - 2027",
+        "location": "Sherbrooke, Québec, Canada",
+        "details": {
+          "logo": "/images/svg/UdeS_logo_h_noir.svg",
+          "description": "Programme d'ingénierie informatique axé sur le développement logiciel, les systèmes embarqués et l'intelligence artificielle. Projets pratiques incluant la conception de logiciels, le développement d'applications et la recherche en IA."
         }
-      ]
+      },
+      "college": {
+        "degree": "DEC Technique en Technologies du Génie Physique",
+        "school": "Cégep André Laurendeau",
+        "period": "2019 - 2023",
+        "location": "LaSalle, Québec, Canada",
+        "details": {
+          "logo": "/images/svg/candrelaurendeau-logo.svg",
+          "description": "Formation technique axée sur les systèmes embarqués, l'électronique et la programmation. Projets pratiques incluant la conception de circuits et le développement de microcontrôleurs."
+        }
+      }
     },
     "interests": {
       "title": "Intérêts & Passions",

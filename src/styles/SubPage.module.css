@@ -24,7 +24,7 @@
 }
 
 .sectionTitle {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 16px;
     color: var(--content-title);
 }
@@ -53,6 +53,31 @@
     border: 1px solid var(--card-border);
     border-radius: 8px;
     background: var(--card-bg);
+    margin-bottom: 24px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    transition: none !important;
+}
+
+.cardContent {
+    flex: 1;
+}
+
+.cardImageLogoUDS {
+    width: 10vw;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-top: -24px;
+    transition: none !important;
+}
+
+.cardImageLogoCAL {
+    width: 10vw;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-top: 8px;
+    transition: none !important;
 }
 
 .cardWithMargin {

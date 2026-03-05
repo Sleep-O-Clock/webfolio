@@ -43,7 +43,6 @@ export default function AboutPage() {
         { id: "background", label: t.about.sidebarLabels.background },
         { id: "skills", label: t.about.sidebarLabels.skills },
         { id: "education", label: t.about.sidebarLabels.education },
-        { id: "interests", label: t.about.sidebarLabels.interests },
     ]
 
     const aboutData: { [key: string]: any } = {
@@ -69,13 +68,8 @@ export default function AboutPage() {
             ]
         },
         "education": {
-            title: t.about.education.title,
-            items: t.about.education.items
+            items: t.about.education
         },
-        "interests": {
-            title: t.about.interests.title,
-            items: t.about.interests.items
-        }
     }
 
     const currentSection = aboutData[activeSection]
@@ -101,7 +95,6 @@ export default function AboutPage() {
                     />
                 )}
 
-
                 {activeSection === "skills" && currentSection && (
                     <SkillsSection
                         title={currentSection.title}
@@ -111,14 +104,6 @@ export default function AboutPage() {
 
                 {activeSection === "education" && currentSection && (
                     <EducationSection
-                        title={currentSection.title}
-                        items={currentSection.items}
-                    />
-                )}
-
-                {activeSection === "interests" && currentSection && (
-                    <InterestsSection
-                        title={currentSection.title}
                         items={currentSection.items}
                     />
                 )}

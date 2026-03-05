@@ -4,27 +4,49 @@ interface EducationItem {
     degree: string;
     school: string;
     period: string;
-    details: string;
+    location: string;
+    details: {
+        description: string;
+        logo: string;
+    };
 }
 
 interface EducationSectionProps {
-    title: string;
-    items: EducationItem[];
+    items: {
+        university: EducationItem;
+        college: EducationItem;
+    };
 }
 
-export default function EducationSection({ title, items }: EducationSectionProps) {
+const link_uds = process.env.NEXT_PUBLIC_COMPUTER_ENGINEERING_LINK_UDS;
+const link_cal = process.env.NEXT_PUBLIC_PHYSICS_TECHNOLOGY_LINK_CAL;
+
+export default function EducationSection({ items }: EducationSectionProps) {
     return (
         <section>
             <div className={styles.card}>
-                <h2 className={styles.sectionTitle}>{title}</h2>
-                {items.map((item, index) => (
-                    <div key={index} className={index > 0 ? styles.sectionTop : ""}>
-                        <h3 className={styles.subsectionTitle}>{item.degree}</h3>
-                        <p className={styles.organizationText}>{item.school}</p>
-                        <p className={styles.metaText}>{item.period}</p>
-                        <p className={styles.bodyTextShort}>{item.details}</p>
-                    </div>
-                ))}
+                <div className={styles.cardContent}>
+                    <h2 className={styles.sectionTitle}>{items.university.degree}</h2>
+                    <p className={styles.organizationText}>{items.university.school}</p>
+                    <p className={styles.metaText}>{items.university.period}</p>
+                    <p className={styles.metaText}>{items.university.location}</p>
+                    <p className={styles.bodyTextShort}>{items.university.details.description}</p>
+                </div>
+                <a href={link_uds} target="_blank" rel="noopener noreferrer">
+                    <img className={styles.cardImageLogoUDS} src={items.university.details.logo} alt={`${items.university.school} logo`} />
+                </a>
+            </div>
+            <div className={styles.card}>
+                <div className={styles.cardContent}>
+                    <h2 className={styles.sectionTitle}>{items.college.degree}</h2>
+                    <p className={styles.organizationText}>{items.college.school}</p>
+                    <p className={styles.metaText}>{items.college.period}</p>
+                    <p className={styles.metaText}>{items.college.location}</p>
+                    <p className={styles.bodyTextShort}>{items.college.details.description}</p>
+                </div>
+                <a href={link_cal} target="_blank" rel="noopener noreferrer">
+                    <img className={styles.cardImageLogoCAL} src={items.college.details.logo} alt={`${items.college.school} logo`} />
+                </a>
             </div>
         </section>
     );
