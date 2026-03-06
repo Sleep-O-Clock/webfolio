@@ -3,9 +3,14 @@ import "../lib/fontawesome";
 
 export const metadata = {
     title: "Vincent Lavallée",
-    description: "Cumputer Engineer Student",
+    description: "Computer Engineer Student",
 }
 
+export const viewport = {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+}
 
 export default function RootLayout({
     children,

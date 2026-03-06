@@ -226,7 +226,8 @@
     background: var(--navbar-hover);
 }
 
-.arrowDown, .arrowUp {
+.arrowDown,
+.arrowUp {
     transition: transform 0.3s ease;
     display: inline-block;
 }
@@ -284,7 +285,8 @@
         display: flex;
     }
 
-    .left, .right {
+    .left,
+    .right {
         display: none;
     }
 }

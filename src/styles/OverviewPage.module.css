@@ -1,0 +1,153 @@
+.main {
+    padding: 48px;
+    width: 100%;
+}
+
+.pageTitle {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.pageSubtitle {
+    font-size: 1.1rem;
+    margin-bottom: 48px;
+    opacity: 0.7;
+}
+
+.exploreText {
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.cardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.gridContainer {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+    padding: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s ease;
+    color: inherit;
+}
+
+.card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.cardDescription {
+    opacity: 0.7;
+    line-height: 1.6;
+}
+
+/* Responsive Styles for Tablets */
+@media (max-width: 1024px) {
+    .main {
+        padding: 36px;
+    }
+
+    .pageTitle {
+        font-size: 2.2rem;
+    }
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    .main {
+        padding: 24px 20px;
+    }
+
+    .pageTitle {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+    }
+
+    .pageSubtitle {
+        font-size: 1rem;
+        margin-bottom: 32px;
+    }
+
+    .exploreText {
+        font-size: 1rem;
+        margin-bottom: 24px;
+    }
+
+    .cardsContainer,
+    .gridContainer {
+        gap: 20px;
+    }
+
+    .gridContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 24px;
+    }
+
+    .cardTitle {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    .cardDescription {
+        font-size: 0.95rem;
+    }
+}
+
+/* Responsive Styles for Small Phones */
+@media (max-width: 480px) {
+    .main {
+        padding: 20px 16px;
+    }
+
+    .pageTitle {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    .pageSubtitle {
+        font-size: 0.95rem;
+        margin-bottom: 28px;
+    }
+
+    .exploreText {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+    .cardsContainer,
+    .gridContainer {
+        gap: 16px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .cardTitle {
+        font-size: 1.2rem;
+    }
+
+    .cardDescription {
+        font-size: 0.9rem;
+    }
+}

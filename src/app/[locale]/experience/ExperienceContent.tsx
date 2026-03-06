@@ -5,6 +5,7 @@ import { getMessages } from "@/src/i18n"
 import Sidebar from "@/src/components/layout/Sidebar"
 import { useSidebarMargin } from "@/src/hooks/useSidebarMargin"
 import { useRouter } from "next/navigation"
+import styles from "@/src/styles/OverviewPage.module.css"
 
 interface ExperienceContentProps {
     locale: string
@@ -31,48 +32,28 @@ export default function ExperienceContent({ locale }: ExperienceContentProps) {
                 links={sidebarLinks}
                 onSectionChange={handleSectionChange}
             />
-            <main style={{
-                padding: "48px",
-                maxWidth: "min(900px, 80vw)",
-                width: "100%"
-            }}>
-                <h1 style={{ fontSize: "2.5rem", marginBottom: "16px" }}>{t.experience.title}</h1>
-                <p style={{ fontSize: "1.1rem", marginBottom: "48px", opacity: 0.7 }}>
+            <main className={styles.main} style={sidebarMargin}>
+                <h1 className={styles.pageTitle}>{t.experience.title}</h1>
+                <p className={styles.pageSubtitle}>
                     {t.experience.subtitle}
                 </p>
 
                 <section>
-                    <p style={{ fontSize: "1.1rem", marginBottom: "32px", lineHeight: 1.6 }}>
+                    <p className={styles.exploreText}>
                         {t.experience.exploreText}
                     </p>
 
-                    <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-                        <Link href={`/${locale}/experience/work`} style={{
-                            padding: "32px",
-                            border: "1px solid rgba(255, 255, 255, 0.1)",
-                            borderRadius: "8px",
-                            background: "rgba(255, 255, 255, 0.05)",
-                            textDecoration: "none",
-                            display: "block",
-                            transition: "all 0.2s ease"
-                        }}>
-                            <h2 style={{ fontSize: "1.5rem", marginBottom: "12px" }}>{t.experience.workExperiences}</h2>
-                            <p style={{ opacity: 0.7, lineHeight: 1.6 }}>
+                    <div className={styles.cardsContainer}>
+                        <Link href={`/${locale}/experience/work`} className={styles.card}>
+                            <h2 className={styles.cardTitle}>{t.experience.workExperiences}</h2>
+                            <p className={styles.cardDescription}>
                                 {t.experience.cards.work.description}
                             </p>
                         </Link>
 
-                        <Link href={`/${locale}/experience/implications`} style={{
-                            padding: "32px",
-                            border: "1px solid rgba(255, 255, 255, 0.1)",
-                            borderRadius: "8px",
-                            background: "rgba(255, 255, 255, 0.05)",
-                            textDecoration: "none",
-                            display: "block",
-                            transition: "all 0.2s ease"
-                        }}>
-                            <h2 style={{ fontSize: "1.5rem", marginBottom: "12px" }}>{t.experience.implications}</h2>
-                            <p style={{ opacity: 0.7, lineHeight: 1.6 }}>
+                        <Link href={`/${locale}/experience/implications`} className={styles.card}>
+                            <h2 className={styles.cardTitle}>{t.experience.implications}</h2>
+                            <p className={styles.cardDescription}>
                                 {t.experience.cards.implications.description}
                             </p>
                         </Link>
@@ -82,3 +63,4 @@ export default function ExperienceContent({ locale }: ExperienceContentProps) {
         </>
     )
 }
+

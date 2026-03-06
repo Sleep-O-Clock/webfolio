@@ -220,3 +220,288 @@
     border-color: var(--link-hover-border);
     color: var(--link-hover-color);
 }
+
+/* Responsive Styles for Tablets */
+@media (max-width: 1024px) {
+    .container {
+        padding: 36px;
+    }
+
+    .containerNarrow {
+        padding: 36px;
+        max-width: min(700px, 80vw);
+    }
+
+    .pageTitle {
+        font-size: 2.2rem;
+    }
+
+    .card {
+        padding: 24px;
+        gap: 20px;
+    }
+
+    .cardImageLogoUDS,
+    .cardImageLogoCAL {
+        width: 12vw;
+    }
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    .container {
+        padding: 24px 20px;
+    }
+
+    .containerNarrow {
+        padding: 24px 20px;
+        max-width: 100%;
+    }
+
+    /* Headings */
+    .pageTitle {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+    }
+
+    .pageSubtitle {
+        font-size: 1rem;
+        margin-bottom: 32px;
+    }
+
+    .sectionTitle {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+
+    .sectionDescription {
+        font-size: 1.05rem;
+        margin-bottom: 20px;
+    }
+
+    .subsectionTitle {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .overviewTitle {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+
+    .titleLarge {
+        font-size: 1.5rem;
+    }
+
+    /* Cards */
+    .card {
+        padding: 20px;
+        gap: 16px;
+        flex-direction: column;
+    }
+
+    .cardWithMargin {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .cardImageLogoUDS,
+    .cardImageLogoCAL {
+        width: 30vw;
+        max-width: 120px;
+        margin-top: 0;
+        align-self: center;
+    }
+
+    .timelineCard {
+        padding-left: 20px;
+        border-left-width: 2px;
+    }
+
+    /* Text styles */
+    .bodyText {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+    .bodyTextShort {
+        font-size: 0.95rem;
+        margin-bottom: 14px;
+    }
+
+    .metaText {
+        font-size: 0.85rem;
+    }
+
+    .organizationText {
+        font-size: 1rem;
+    }
+
+    .locationText {
+        font-size: 0.85rem;
+    }
+
+    .periodText {
+        font-size: 0.9rem;
+    }
+
+    /* Lists */
+    .listItem {
+        font-size: 0.95rem;
+        padding-left: 18px;
+        margin-bottom: 8px;
+    }
+
+    /* Tags */
+    .tagContainer {
+        gap: 6px;
+    }
+
+    .tag {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+
+    /* Links */
+    .linkContainer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .link {
+        padding: 10px 14px;
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    /* Header row */
+    .headerRow {
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-start;
+    }
+
+    /* Sections */
+    .section {
+        margin-bottom: 20px;
+    }
+
+    .sectionTop {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Responsive Styles for Small Phones */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 16px;
+    }
+
+    .containerNarrow {
+        padding: 20px 16px;
+    }
+
+    /* Headings */
+    .pageTitle {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    .pageSubtitle {
+        font-size: 0.95rem;
+        margin-bottom: 28px;
+    }
+
+    .sectionTitle {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .sectionDescription {
+        font-size: 1rem;
+        margin-bottom: 18px;
+    }
+
+    .subsectionTitle {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+
+    .overviewTitle {
+        font-size: 1.2rem;
+    }
+
+    .titleLarge {
+        font-size: 1.3rem;
+    }
+
+    /* Cards */
+    .card {
+        padding: 16px;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .cardWithMargin {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+
+    .cardImageLogoUDS,
+    .cardImageLogoCAL {
+        width: 35vw;
+        max-width: 100px;
+    }
+
+    .timelineCard {
+        padding-left: 16px;
+    }
+
+    /* Text styles */
+    .bodyText {
+        font-size: 0.9rem;
+        margin-bottom: 16px;
+        line-height: 1.5;
+    }
+
+    .bodyTextShort {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+
+    .metaText {
+        font-size: 0.8rem;
+    }
+
+    .organizationText {
+        font-size: 0.95rem;
+    }
+
+    .locationText {
+        font-size: 0.8rem;
+    }
+
+    .periodText {
+        font-size: 0.85rem;
+    }
+
+    /* Lists */
+    .listItem {
+        font-size: 0.9rem;
+        padding-left: 16px;
+        margin-bottom: 7px;
+    }
+
+    /* Tags */
+    .tag {
+        padding: 4px 8px;
+        font-size: 0.75rem;
+    }
+
+    /* Links */
+    .link {
+        padding: 9px 12px;
+        font-size: 0.8rem;
+    }
+}

@@ -135,7 +135,7 @@
     .sidebar {
         width: 260px;
     }
-    
+
     .toggleButton {
         left: 260px;
     }
@@ -149,11 +149,11 @@
         z-index: 999;
         box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     }
-    
+
     .sidebar.collapsed {
         transform: translateX(-100%);
     }
-    
+
     .toggleButton {
         top: 70px;
         left: 0;
@@ -163,11 +163,11 @@
         font-size: 1rem;
         z-index: 998;
     }
-    
+
     .toggleButton.collapsed {
         left: 0;
     }
-    
+
     .overlay {
         display: block;
         position: fixed;
@@ -186,22 +186,22 @@
         max-width: 280px;
         padding: 20px;
     }
-    
+
     .toggleButton {
         width: 32px;
         height: 32px;
         font-size: 0.9rem;
     }
-    
+
     .title {
         font-size: 0.85rem;
     }
-    
+
     .link {
         font-size: 0.85rem;
         padding: 10px;
     }
-    
+
     .sublink {
         font-size: 0.8rem;
         padding: 8px 10px;

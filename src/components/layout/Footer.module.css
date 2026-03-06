@@ -64,3 +64,52 @@
 .linkedin:hover svg {
     color: var(--linkedin-icon-hover);
 }
+
+/* Responsive Styles for Tablets */
+@media (max-width: 1024px) {
+    .footer {
+        padding: 18px 36px;
+    }
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    .footer {
+        padding: 16px 20px;
+        font-size: 0.8rem;
+    }
+
+    .left {
+        gap: 6px;
+    }
+
+    .right {
+        gap: 12px;
+    }
+
+    .link svg {
+        font-size: 0.95rem;
+    }
+}
+
+/* Responsive Styles for Small Phones */
+@media (max-width: 480px) {
+    .footer {
+        padding: 14px 16px;
+        font-size: 0.75rem;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .left {
+        gap: 5px;
+    }
+
+    .right {
+        gap: 14px;
+    }
+
+    .link svg {
+        font-size: 1rem;
+    }
+}

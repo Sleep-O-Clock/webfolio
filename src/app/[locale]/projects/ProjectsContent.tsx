@@ -5,6 +5,7 @@ import { getMessages } from "@/src/i18n"
 import Sidebar from "@/src/components/layout/Sidebar"
 import { useSidebarMargin } from "@/src/hooks/useSidebarMargin"
 import { useRouter } from "next/navigation"
+import styles from "@/src/styles/OverviewPage.module.css"
 
 interface ProjectsContentProps {
     locale: string
@@ -32,63 +33,35 @@ export default function ProjectsContent({ locale }: ProjectsContentProps) {
                 links={sidebarLinks}
                 onSectionChange={handleSectionChange}
             />
-            <main style={{
-                padding: "48px",
-                width: "100%",
-                ...sidebarMargin
-            }}>
-                <h1 style={{ fontSize: "2.5rem", marginBottom: "16px" }}>{t.projects.title}</h1>
-                <p style={{ fontSize: "1.1rem", marginBottom: "48px", opacity: 0.7 }}>
+            <main className={styles.main} style={sidebarMargin}>
+                <h1 className={styles.pageTitle}>{t.projects.title}</h1>
+                <p className={styles.pageSubtitle}>
                     {t.projects.subtitle}
                 </p>
 
                 <section>
-                    <p style={{ fontSize: "1.1rem", marginBottom: "32px", lineHeight: 1.6 }}>
+                    <p className={styles.exploreText}>
                         {t.projects.exploreText}
                     </p>
 
-                    <div style={{ display: "grid", gap: "24px", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}>
-                        <Link href={`/${locale}/projects/personal`} style={{
-                            padding: "32px",
-                            border: "1px solid rgba(255, 255, 255, 0.1)",
-                            borderRadius: "8px",
-                            background: "rgba(255, 255, 255, 0.05)",
-                            textDecoration: "none",
-                            display: "block",
-                            transition: "all 0.2s ease"
-                        }}>
-                            <h2 style={{ fontSize: "1.5rem", marginBottom: "12px" }}>{t.projects.personalProjects}</h2>
-                            <p style={{ opacity: 0.7, lineHeight: 1.6 }}>
+                    <div className={styles.gridContainer}>
+                        <Link href={`/${locale}/projects/personal`} className={styles.card}>
+                            <h2 className={styles.cardTitle}>{t.projects.personalProjects}</h2>
+                            <p className={styles.cardDescription}>
                                 {t.projects.cards.personal.description}
                             </p>
                         </Link>
 
-                        <Link href={`/${locale}/projects/school`} style={{
-                            padding: "32px",
-                            border: "1px solid rgba(255, 255, 255, 0.1)",
-                            borderRadius: "8px",
-                            background: "rgba(255, 255, 255, 0.05)",
-                            textDecoration: "none",
-                            display: "block",
-                            transition: "all 0.2s ease"
-                        }}>
-                            <h2 style={{ fontSize: "1.5rem", marginBottom: "12px" }}>{t.projects.schoolProjects}</h2>
-                            <p style={{ opacity: 0.7, lineHeight: 1.6 }}>
+                        <Link href={`/${locale}/projects/school`} className={styles.card}>
+                            <h2 className={styles.cardTitle}>{t.projects.schoolProjects}</h2>
+                            <p className={styles.cardDescription}>
                                 {t.projects.cards.school.description}
                             </p>
                         </Link>
 
-                        <Link href={`/${locale}/projects/pmc`} style={{
-                            padding: "32px",
-                            border: "1px solid rgba(255, 255, 255, 0.1)",
-                            borderRadius: "8px",
-                            background: "rgba(255, 255, 255, 0.05)",
-                            textDecoration: "none",
-                            display: "block",
-                            transition: "all 0.2s ease"
-                        }}>
-                            <h2 style={{ fontSize: "1.5rem", marginBottom: "12px" }}>{t.projects.pmc}</h2>
-                            <p style={{ opacity: 0.7, lineHeight: 1.6 }}>
+                        <Link href={`/${locale}/projects/pmc`} className={styles.card}>
+                            <h2 className={styles.cardTitle}>{t.projects.pmc}</h2>
+                            <p className={styles.cardDescription}>
                                 {t.projects.cards.pmc.description}
                             </p>
                         </Link>

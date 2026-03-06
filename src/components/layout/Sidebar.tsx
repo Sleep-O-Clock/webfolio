@@ -39,7 +39,7 @@ export default function Sidebar({ title, links = [], onSectionChange, activeSect
         if (onSectionChange) {
             onSectionChange(id)
         }
-        
+
         // Auto-close sidebar on mobile after clicking a link
         if (window.innerWidth <= 768) {
             setIsCollapsed(true)
@@ -65,7 +65,7 @@ export default function Sidebar({ title, links = [], onSectionChange, activeSect
 
             {/* Mobile Overlay */}
             {!isCollapsed && (
-                <div 
+                <div
                     className={styles.overlay}
                     onClick={handleOverlayClick}
                 />

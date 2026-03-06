@@ -29,7 +29,7 @@ export default function Navbar({ locale }: { locale: string }) {
     return (
         <nav className={styles.nav}>
             {/* Mobile Menu Button */}
-            <button 
+            <button
                 className={styles.hamburger}
                 onClick={toggleMobileMenu}
                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -92,10 +92,10 @@ export default function Navbar({ locale }: { locale: string }) {
                     <LanguageToggle currentLocale={locale} />
                     <ThemeToggle />
                 </div>
-                
+
                 <div className={styles.mobileMenuContent}>
-                    <Link 
-                        href={`/${locale}/about`} 
+                    <Link
+                        href={`/${locale}/about`}
                         className={styles.mobileLink}
                         onClick={closeMobileMenu}
                     >
@@ -104,7 +104,7 @@ export default function Navbar({ locale }: { locale: string }) {
 
                     {/* Projects Mobile Dropdown */}
                     <div className={styles.mobileDropdown}>
-                        <button 
+                        <button
                             className={styles.mobileDropdownTrigger}
                             onClick={() => toggleDropdown('projects')}
                         >
@@ -112,22 +112,22 @@ export default function Navbar({ locale }: { locale: string }) {
                             <span className={openDropdown === 'projects' ? styles.arrowUp : styles.arrowDown}>▾</span>
                         </button>
                         <div className={`${styles.mobileDropdownMenu} ${openDropdown === 'projects' ? styles.mobileDropdownMenuOpen : ""}`}>
-                            <Link 
-                                href={`/${locale}/projects/personal`} 
+                            <Link
+                                href={`/${locale}/projects/personal`}
                                 className={styles.mobileDropdownItem}
                                 onClick={closeMobileMenu}
                             >
                                 {messages.projects.personalProjects}
                             </Link>
-                            <Link 
-                                href={`/${locale}/projects/school`} 
+                            <Link
+                                href={`/${locale}/projects/school`}
                                 className={styles.mobileDropdownItem}
                                 onClick={closeMobileMenu}
                             >
                                 {messages.projects.schoolProjects}
                             </Link>
-                            <Link 
-                                href={`/${locale}/projects/pmc`} 
+                            <Link
+                                href={`/${locale}/projects/pmc`}
                                 className={styles.mobileDropdownItem}
                                 onClick={closeMobileMenu}
                             >
@@ -138,7 +138,7 @@ export default function Navbar({ locale }: { locale: string }) {
 
                     {/* Experience Mobile Dropdown */}
                     <div className={styles.mobileDropdown}>
-                        <button 
+                        <button
                             className={styles.mobileDropdownTrigger}
                             onClick={() => toggleDropdown('experience')}
                         >
@@ -146,15 +146,15 @@ export default function Navbar({ locale }: { locale: string }) {
                             <span className={openDropdown === 'experience' ? styles.arrowUp : styles.arrowDown}>▾</span>
                         </button>
                         <div className={`${styles.mobileDropdownMenu} ${openDropdown === 'experience' ? styles.mobileDropdownMenuOpen : ""}`}>
-                            <Link 
-                                href={`/${locale}/experience/work`} 
+                            <Link
+                                href={`/${locale}/experience/work`}
                                 className={styles.mobileDropdownItem}
                                 onClick={closeMobileMenu}
                             >
                                 {messages.experience.workExperiences}
                             </Link>
-                            <Link 
-                                href={`/${locale}/experience/implications`} 
+                            <Link
+                                href={`/${locale}/experience/implications`}
                                 className={styles.mobileDropdownItem}
                                 onClick={closeMobileMenu}
                             >
@@ -163,8 +163,8 @@ export default function Navbar({ locale }: { locale: string }) {
                         </div>
                     </div>
 
-                    <Link 
-                        href={`/${locale}/contact`} 
+                    <Link
+                        href={`/${locale}/contact`}
                         className={styles.mobileLink}
                         onClick={closeMobileMenu}
                     >
@@ -175,7 +175,7 @@ export default function Navbar({ locale }: { locale: string }) {
 
             {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
-                <div 
+                <div
                     className={styles.mobileOverlay}
                     onClick={closeMobileMenu}
                 />
