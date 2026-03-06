@@ -81,10 +81,6 @@ export default function PersonalProjectsPage() {
                 }}
             />
             <main className={styles.container} style={sidebarMargin}>
-                <h1 className={styles.pageTitle}>{t.projects.personalProjects}</h1>
-                <p className={styles.pageSubtitle}>
-                    {t.projects.subtitle}
-                </p>
 
                 {activeSection === "overview" && (
                     <ProjectOverviewSection

@@ -100,10 +100,50 @@
     color: var(--content-text);
 }
 
+.bodyText p {
+    margin-bottom: 16px;
+}
+
+.bodyText strong {
+    font-weight: 700;
+    color: var(--content-title);
+}
+
+.bodyText ul,
+.bodyText ol {
+    margin-left: 20px;
+    margin-bottom: 16px;
+}
+
+.bodyText ul li {
+    margin-bottom: 8px;
+    list-style-type: disc;
+}
+
 .bodyTextShort {
     line-height: 1.6;
     margin-bottom: 16px;
     color: var(--content-text);
+}
+
+.bodyTextShort p {
+    margin-bottom: 12px;
+}
+
+.bodyTextShort strong {
+    font-weight: 700;
+    color: var(--content-title);
+}
+
+.bodyTextShort ul,
+.bodyTextShort ol {
+    margin-left: 20px;
+    margin-bottom: 12px;
+}
+
+.bodyTextShort ul li {
+    margin-bottom: 6px;
+    list-style-type: disc;
 }
 
 .metaText {
@@ -182,6 +222,121 @@
 .sectionTop {
     margin-top: 24px;
     margin-bottom: 24px;
+}
+
+/* Markdown Content */
+.markdownContent {
+    line-height: 1.6;
+    color: var(--content-text);
+}
+
+.markdownContent h1 {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+    color: var(--content-title);
+}
+
+.markdownContent h2 {
+    font-size: 1.8rem;
+    margin-top: 48px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--card-border);
+    color: var(--content-title);
+}
+
+.markdownContent h3 {
+    font-size: 1.3rem;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    color: var(--content-title);
+}
+
+.markdownContent h4 {
+    font-size: 1.1rem;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    color: var(--content-title);
+}
+
+.markdownContent p {
+    margin-bottom: 16px;
+    color: var(--content-text);
+}
+
+.markdownContent strong {
+    font-weight: 700;
+    color: var(--content-title);
+}
+
+.markdownContent ul,
+.markdownContent ol {
+    margin-left: 24px;
+    margin-bottom: 16px;
+}
+
+.markdownContent ul li {
+    margin-bottom: 8px;
+    list-style-type: disc;
+    color: var(--content-text);
+}
+
+.markdownContent ol li {
+    margin-bottom: 8px;
+    list-style-type: decimal;
+    color: var(--content-text);
+}
+
+.markdownContent hr {
+    margin: 48px 0;
+    border: none;
+    border-top: 1px solid var(--card-border);
+}
+
+.markdownContent code {
+    background: var(--card-bg);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+}
+
+.markdownContent pre {
+    background: var(--card-bg);
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 16px;
+}
+
+.markdownContent pre code {
+    background: none;
+    padding: 0;
+}
+
+.markdownContent blockquote {
+    border-left: 4px solid var(--card-border);
+    padding-left: 20px;
+    margin: 20px 0;
+    color: var(--content-subtitle);
+    font-style: italic;
+}
+
+.markdownContent a {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+.markdownContent a:hover {
+    color: var(--link-hover-color);
+}
+
+.markdownContent img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 24px 0;
+    display: block;
 }
 
 /* Tags/Badges */
@@ -390,6 +545,54 @@
         margin-top: 20px;
         margin-bottom: 20px;
     }
+
+    /* Markdown Content */
+    .markdownContent h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .markdownContent h2 {
+        font-size: 1.5rem;
+        margin-top: 36px;
+        margin-bottom: 16px;
+    }
+
+    .markdownContent h3 {
+        font-size: 1.2rem;
+        margin-top: 28px;
+        margin-bottom: 14px;
+    }
+
+    .markdownContent h4 {
+        font-size: 1.05rem;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .markdownContent p {
+        font-size: 0.95rem;
+        margin-bottom: 14px;
+    }
+
+    .markdownContent ul,
+    .markdownContent ol {
+        margin-left: 22px;
+        font-size: 0.95rem;
+    }
+
+    .markdownContent hr {
+        margin: 36px 0;
+    }
+
+    .markdownContent pre {
+        padding: 14px;
+        font-size: 0.9rem;
+    }
+
+    .markdownContent img {
+        margin: 20px 0;
+    }
 }
 
 /* Responsive Styles for Small Phones */
@@ -503,5 +706,53 @@
     .link {
         padding: 9px 12px;
         font-size: 0.8rem;
+    }
+
+    /* Markdown Content */
+    .markdownContent h1 {
+        font-size: 1.6rem;
+        margin-bottom: 16px;
+    }
+
+    .markdownContent h2 {
+        font-size: 1.3rem;
+        margin-top: 32px;
+        margin-bottom: 14px;
+    }
+
+    .markdownContent h3 {
+        font-size: 1.1rem;
+        margin-top: 24px;
+        margin-bottom: 12px;
+    }
+
+    .markdownContent h4 {
+        font-size: 1rem;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .markdownContent p {
+        font-size: 0.9rem;
+        margin-bottom: 14px;
+    }
+
+    .markdownContent ul,
+    .markdownContent ol {
+        margin-left: 20px;
+        font-size: 0.9rem;
+    }
+
+    .markdownContent hr {
+        margin: 32px 0;
+    }
+
+    .markdownContent pre {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+
+    .markdownContent img {
+        margin: 16px 0;
     }
 }
