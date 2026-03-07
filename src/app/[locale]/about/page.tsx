@@ -1,113 +1,33 @@
-"use client"
+import { getMessages } from "@/src/i18n"
+import { getMarkdown } from "@/src/lib/markdown"
+import AboutClient from "./AboutClient"
 
-import { useState, useEffect } from "react"
-import { getMessages } from "@/src/i18n";
-import { useSidebarMargin } from "@/src/hooks/useSidebarMargin";
-import { useParams } from "next/navigation";
-import Sidebar from "@/src/components/layout/Sidebar";
-import BackgroundSection from "./BackgroundSection";
-import SkillsSection from "./SkillsSection";
-import EducationSection from "./EducationSection";
-import InterestsSection from "./InterestsSection";
-import styles from "@/src/styles/SubPage.module.css";
+export default async function AboutPage({
+    params
+}: {
+    params: Promise<{ locale: string }>
+}) {
+    const { locale } = await params
+    const t = getMessages(locale)
 
-export default function AboutPage() {
-    const params = useParams()
-    const locale = params.locale as string
-    const t = getMessages(locale);
-    const sidebarMargin = useSidebarMargin();
-    const [activeSection, setActiveSection] = useState("background");
-
-    // Initialize from hash and listen for hash changes
-    useEffect(() => {
-        const updateFromHash = () => {
-            const hash = window.location.hash.slice(1);
-            if (hash && ["background", "skills", "education", "interests"].includes(hash)) {
-                setActiveSection(hash);
-            }
-        };
-
-        // Set initial hash on mount
-        updateFromHash();
-
-        window.addEventListener('hashchange', updateFromHash);
-        return () => window.removeEventListener('hashchange', updateFromHash);
-    }, []);
-
-    const handleSectionChange = (sectionId: string) => {
-        setActiveSection(sectionId);
-        window.location.hash = sectionId;
-    };
-
-    const sidebarLinks = [
-        { id: "background", label: t.about.sidebarLabels.background },
-        { id: "skills", label: t.about.sidebarLabels.skills },
-        { id: "education", label: t.about.sidebarLabels.education },
-    ]
-
-    const aboutData: { [key: string]: any } = {
-        "background": {
-            title: t.about.background.title,
-            content: t.about.background.content,
-        },
-        "skills": {
-            title: t.about.skills.title,
-            categories: [
-                {
-                    name: t.about.skills.categories.languagesFrameworks,
-                    items: ["JavaScript/TypeScript", "React", "Next.js", "Node.js", "Python", "Java"]
-                },
-                {
-                    name: t.about.skills.categories.databases,
-                    items: ["PostgreSQL", "MongoDB", "Redis", "MySQL"]
-                },
-                {
-                    name: t.about.skills.categories.toolsDevOps,
-                    items: ["Git", "Docker", "AWS", "CI/CD", "Linux"]
-                }
-            ]
-        },
-        "education": {
-            items: t.about.education
-        },
+    // Fetch all markdown content server-side
+    const markdownContent = {
+        "background": getMarkdown("about/background", locale),
+        "skills": getMarkdown("about/skills", locale),
+        "education": getMarkdown("about/education", locale),
     }
 
-    const currentSection = aboutData[activeSection]
+    const translations = {
+        title: t.about.title,
+        background: t.about.sidebarLabels.background,
+        skills: t.about.sidebarLabels.skills,
+        education: t.about.sidebarLabels.education,
+    }
 
     return (
-        <>
-            <Sidebar
-                title={t.about.title}
-                links={sidebarLinks}
-                activeSection={activeSection}
-                onSectionChange={handleSectionChange}
-            />
-            <main className={styles.container} style={sidebarMargin}>
-                <h1 className={styles.pageTitle}>{t.about.title}</h1>
-                <p className={styles.pageSubtitle}>
-                    {t.about.intro}
-                </p>
-
-                {activeSection === "background" && currentSection && (
-                    <BackgroundSection
-                        title={currentSection.title}
-                        content={currentSection.content}
-                    />
-                )}
-
-                {activeSection === "skills" && currentSection && (
-                    <SkillsSection
-                        title={currentSection.title}
-                        categories={currentSection.categories}
-                    />
-                )}
-
-                {activeSection === "education" && currentSection && (
-                    <EducationSection
-                        items={currentSection.items}
-                    />
-                )}
-            </main>
-        </>
-    );
+        <AboutClient
+            translations={translations}
+            markdownContent={markdownContent}
+        />
+    )
 }

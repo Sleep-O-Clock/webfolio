@@ -1,15 +1,31 @@
+import { getMessages } from "@/src/i18n"
 import { getMarkdown } from "@/src/lib/markdown"
-import PMCClientPage from "./PMCClientPage"
+import PMCClient from "./PMCClient"
 
 export default async function PMCPage({
-    params,
+    params
 }: {
-    params: Promise<{ locale: string }>;
+    params: Promise<{ locale: string }>
 }) {
     const { locale } = await params
+    const t = getMessages(locale)
 
-    // Load markdown content on the server
-    const markdownContent = getMarkdown('projects/pmc/pmc', locale)
+    // Fetch all markdown content server-side
+    const markdownContent = {
+        "overview": getMarkdown("projects/pmc/pmc.overview", locale),
+        "pmc-client": getMarkdown("projects/pmc/pmc", locale),
+    }
 
-    return <PMCClientPage locale={locale} content={markdownContent} />
+    const translations = {
+        pmc: t.projects.pmc,
+        projectsTitle: t.projects.title,
+    }
+
+    return (
+        <PMCClient 
+            locale={locale}
+            translations={translations}
+            markdownContent={markdownContent}
+        />
+    )
 }

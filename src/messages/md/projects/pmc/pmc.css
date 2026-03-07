@@ -1,0 +1,18 @@
+/* Custom styles for PMC markdown content */
+
+.test {
+    color: red;
+    font-weight: bold;
+}
+
+.highlight {
+    background: yellow;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+.customSection {
+    border-left: 4px solid blue;
+    padding-left: 1rem;
+    margin: 1rem 0;
+}
